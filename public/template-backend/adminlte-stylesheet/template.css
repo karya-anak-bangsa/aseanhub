@@ -1,0 +1,60 @@
+.required:before {
+    content: "* ";
+    color: red;
+}
+
+span.required::before {
+    content: "* ";
+    color: red;
+}
+
+label.required::before {
+    content: "* ";
+    color: red;
+}
+
+.badge-custom {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.badge-white {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Menengahkan semua isi tabel secara vertikal dan horizontal */
+/* Menargetkan semua sel di dalam tabel AdminLTE */
+.datatables td,
+.datatables th {
+    vertical-align: middle !important;
+}
+
+/* Jika ingin gambar di dalam tabel juga otomatis di tengah */
+.table img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05); */
+}
+
+.form-delete{
+    display:inline;
+}

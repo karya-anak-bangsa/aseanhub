@@ -1,0 +1,15 @@
+1. remove efek blur untuk gambar hero (.hero .hero-block .hero-visual .campus-photo)
+    box-shadow: 0 25px 60px color-mix(in srgb, #000, transparent 82%);
+
+2. perbesar ukuran huruf di prize pool (.campus-facilities .virtual-tour-block .tour-info .tour-perks .perk-item strong)
+    tag strong dari font-size: 1.05rem; ke font-size: 1.15rem;
+    tag p dari font-size: 0.88rem; ke font-size: 1rem;
+
+3. perbesar map untuk peta dki jakarta (.contact .map-block)
+    dari height: 380px; ke height: 480px;
+
+4. perbesar ukuran site map (.campus-facilities .facilities-showcase .showcase-image img)
+  dari height: 380px; ke height: 100%;
+
+5. perbesar icon headar (.header .logo img)
+    dari max-height: 42px; menjadi max-height: 50px;
