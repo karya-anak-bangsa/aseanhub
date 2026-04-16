@@ -40,6 +40,30 @@
     {{-- Company Profile --}}
     <li class="nav-header mt-2">Company Profile</li>
     <li class="nav-item">
+        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fas fa-landmark"></i>
+            <p>Identitas Website</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fas fa-book"></i>
+            <p>About ASEAN Hub</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fas fa-comment-dots"></i>
+            <p>Opening Speeches</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fas fa-map"></i>
+            <p>Site Area</p>
+        </a>
+    </li>
+    <li class="nav-item">
         <a href="{{ route('admin.timeline.index') }}" class="nav-link @yield('nav-timeline')">
             <i class="nav-icon fas fa-calendar-days"></i>
             <p>Activity Timeline</p>

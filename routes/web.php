@@ -10,8 +10,10 @@ use App\Http\Controllers\Pages\LandingPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
 use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
-use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
+
+use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
+use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 
 # halaman backend - Judges
 
@@ -45,6 +47,7 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         Route::resource('judges', Adm_JudgesController::class);
         Route::resource('participants', Adm_ParticipantsController::class);
         Route::resource('voters', Adm_VotersController::class);
+        Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
         Route::resource('timeline', Adm_TimelineController::class);
         Route::resource('reward', Adm_TimelineController::class);
     });

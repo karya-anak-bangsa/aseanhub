@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ParticipantsSeeder::class,
             VotersSeeder::class,
             TimelineSeeder::class,
+            OpeningSpeechesSeeder::class,
         ]);
     }
 }
