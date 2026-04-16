@@ -52,7 +52,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+        <a href="{{ route('admin.opening-speeches.index') }}" class="nav-link @yield('nav-opening-speeches')">
             <i class="nav-icon fas fa-comment-dots"></i>
             <p>Opening Speeches</p>
         </a>

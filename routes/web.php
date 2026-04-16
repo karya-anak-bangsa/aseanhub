@@ -49,7 +49,6 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         Route::resource('voters', Adm_VotersController::class);
         Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
         Route::resource('timeline', Adm_TimelineController::class);
-        Route::resource('reward', Adm_TimelineController::class);
     });
 
 # ------------------------------------------------------------------------------------------------- #

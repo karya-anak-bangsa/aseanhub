@@ -13,3 +13,9 @@
 
 5. perbesar icon headar (.header .logo img)
     dari max-height: 42px; menjadi max-height: 50px;
+
+6. mengatur padding headar (.header .header-top)
+    dari padding: 10px 0; menjadi padding: 20px 0;
+
+7. mengatur padding headar (.header .header-main)
+    dari padding: 18px 0; menjadi padding: 20px 0;

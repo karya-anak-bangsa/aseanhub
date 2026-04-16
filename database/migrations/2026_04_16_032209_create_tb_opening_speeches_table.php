@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('position');
             $table->text('message');
             $table->string('photo')->nullable();
-            $table->integer('order')->default(0);
+            $table->integer('sort_order')->default(0);
 
             # ...
             $table->enum('status_data', ['Active', 'Not Active'])->default('Active');
