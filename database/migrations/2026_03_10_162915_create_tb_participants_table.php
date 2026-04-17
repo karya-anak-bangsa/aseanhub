@@ -12,14 +12,14 @@ return new class extends Migration
 
             # ...
             $table->id('id_participants');
-            $table->string('team_name');
-            $table->string('participants_name_1');
+            $table->string('team_name')->nullable();
+            $table->string('participants_name_1')->nullable();
             $table->string('participants_name_2')->nullable();
             $table->string('participants_name_3')->nullable();
             $table->string('participants_name_4')->nullable();
             $table->string('participants_name_5')->nullable();
-            $table->string('participants_country');
-            $table->string('participants_phone');
+            $table->string('participants_country')->nullable();
+            $table->string('participants_phone')->nullable();
 
             # status participants
             $table->enum('status_registration', ['Pending', 'Rejected', 'Verified'])->default('Pending');

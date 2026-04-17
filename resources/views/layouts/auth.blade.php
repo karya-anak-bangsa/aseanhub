@@ -69,14 +69,16 @@
                 font-weight: bold;
             }
 
-            .form-control {
+            .form-control,
+            .form-select {
                 border-radius: .5rem;
                 padding: 0.55rem 0.55rem;
             }
 
-            .form-control:focus {
+            .form-control:focus,
+            .form-select:focus {
                 border-color: var(--warning-default);
-                box-shadow: none;
+                box-shadow: 0 0 0 0.1rem rgba(254, 193, 7, 0.25);
             }
 
             .btn-login {
@@ -84,8 +86,12 @@
                 border-radius: .5rem;
                 padding: 0.55rem 0.55rem;
             }
-        </style>
 
+            .btn-warning:hover {
+                background-color: var(--warning-600);
+                border-color: var(--warning-600);
+            }
+        </style>
         @stack('styles')
     </head>
 
@@ -96,7 +102,7 @@
                 <div class="col-sm-8 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
                     <div class="text-center">
                         <h1 class="mb-3">ASEAN Hub International Design Competition</h1>
-                        <p class="lead mb-3">Manage your data securely, quickly, and efficiently.</p>
+                        <p class="lead mb-3">Join the competition, submit your ideas, and be part of ASEAN’s future.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">

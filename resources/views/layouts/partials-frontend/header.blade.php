@@ -45,8 +45,8 @@
                 </li>
                 <li><a href="">Prize Pool</a></li>
                 <li><a href="">Judges</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="{{ route('login') }}" class="btn btn-danger ps-3">Sign In</a></li>
+                <li><a href="{{ route('login') }}" class="btn btn-danger ms-4 me-2">Sign In</a></li>
+                <li><a href="{{ route('register') }}" class="btn btn-primary ">Sign Up</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

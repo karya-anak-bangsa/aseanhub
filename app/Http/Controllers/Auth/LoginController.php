@@ -49,26 +49,16 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        // Daftar guard yang kita pakai
-        $guards = ['admin', 'judges', 'participants', 'voters'];
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                Auth::guard($guard)->logout();
-                break;
-            }
-        }
-
-        // foreach (['admin', 'judges', 'participants', 'voters'] as $guard) {
-        //     if (Auth::guard($guard)->check()) {
-        //         Auth::guard($guard)->logout();
-        //     }
-        // }
+        // logout semua guard
+        Auth::guard('admin')->logout();
+        Auth::guard('judges')->logout();
+        Auth::guard('participants')->logout();
+        Auth::guard('voters')->logout();
 
         // Invalidate session
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('aseanhub');
     }
 }

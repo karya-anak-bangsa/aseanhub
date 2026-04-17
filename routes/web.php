@@ -2,6 +2,7 @@
 
 # halaman auth
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
@@ -27,15 +28,20 @@ use Illuminate\Support\Facades\Route;
 # Route Auth -------------------------------------------------------------------------------------- #
 # ------------------------------------------------------------------------------------------------- #
 Route::middleware('guest.role')->group(function () {
+    # proses login
     Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.process');
+
+    # proses register
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 # ------------------------------------------------------------------------------------------------- #
 # Route Halaman Frontend -------------------------------------------------------------------------- #
 # ------------------------------------------------------------------------------------------------- #
-Route::get('/', [LandingPageController::class, 'index']);
+Route::get('/', [LandingPageController::class, 'index'])->name('aseanhub');
 
 # ------------------------------------------------------------------------------------------------- #
 # Route Halaman Backend - Admin ------------------------------------------------------------------- #

@@ -23,4 +23,12 @@
             </span>
         @endif
     </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="fa-solid fa-right-from-bracket mr-2"></i>Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </li>
 </ul>

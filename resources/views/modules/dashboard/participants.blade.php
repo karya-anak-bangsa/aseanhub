@@ -3,7 +3,7 @@
 @section('content')
 
     <x-modules.dashboard-banner>
-        Welcome to ASEAN Hub International Design Competition <br> by Provincial Government of DKI Jakarta
+        Welcome to ASEAN Hub International Design Competition by Provincial Government of DKI Jakarta
     </x-modules.dashboard-banner>
 
     <x-modules.dashboard-profile
