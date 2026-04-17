@@ -14,7 +14,7 @@ class OpeningSpeechesSeeder extends Seeder
         OpeningSpeeches::create([
             'name'          => 'Dr. Ir. Pramono Anung Wibowo, M.M',
             'position'      => 'Governor of DKI Jakarta',
-            'message'       => 'As Governor of Jakarta, I am delighted to welcome all participants to the ASEAN Hub International Design Competition. 
+            'message'       => 'As Governor of Jakarta, I am proud to welcome all participants to the ASEAN Hub International Design Competition. 
                                 Jakarta is proud to host this initiative as part of our commitment to sustainable and inclusive urban development. 
                                 We encourage all participants to contribute innovative ideas that reflect the spirit of collaboration across the ASEAN region.',
             'photo'         => 'opening-speeches/opening-01.webp',

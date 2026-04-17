@@ -11,7 +11,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
 use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
 use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
-
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 
