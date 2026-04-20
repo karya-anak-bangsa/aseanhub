@@ -1,4 +1,4 @@
-<div class="row d-flex align-items-stretch mb-3 pb-3">
+<div class="row d-flex align-items-stretch mb-5">
 
     <div class="col-sm-9">
         <div class="card card-outline card-info h-100">
@@ -25,9 +25,17 @@
             <div class="card-footer">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="text-left text-dark">
-                        <a href="{{ url('/') }}" class="btn btn-outline-danger">
-                            <i class="fa-solid fa-tv mr-2"></i>Back to Website ASEAN HUB
-                        </a>
+
+                        @if (empty($participants->team_name))
+                            <a href="{{-- route('participants.profile.create') --}}" class="btn btn-outline-danger">
+                                <i class="fa-solid fa-user-pen mr-2"></i>Update Profile
+                            </a>
+                        @else
+                            <a href="{{ url('/') }}" class="btn btn-outline-danger">
+                                <i class="fa-solid fa-tv mr-2"></i>Back to Website ASEAN HUB
+                            </a>
+                        @endif
+
                     </div>
                     <div class="text-right text-muted">
                         <small class="text-danger">You logged on {{ now()->format('Y-m-d') }} - {{ now()->format('H:i') }} WIB</small>

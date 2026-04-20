@@ -29,16 +29,22 @@
     </li>
 
     {{-- PARTICIPANT RESULTS --}}
-    <li class="nav-header mt-2">PARTICIPANT RESULTS</li>
+    <li class="nav-header mt-2">RESULTS OF ASEAN HUB</li>
     <li class="nav-item">
-        <a href="{{-- route('admin.urban-design.index') --}}" class="nav-link @yield('nav-urban-design')">
+        <a href="" class="nav-link @yield('nav-test')">
             <i class="nav-icon fa-solid fa-box-archive"></i>
             <p>Urban Design</p>
         </a>
     </li>
+    <li class="nav-item">
+        <a href="" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fa-solid fa-file-contract"></i>
+            <p>Assessment Results</p>
+        </a>
+    </li>
 
     {{-- Company Profile --}}
-    <li class="nav-header mt-2">Company Profile</li>
+    <li class="nav-header mt-2">COMPANY PROFILE</li>
     <li class="nav-item">
         <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
             <i class="nav-icon fas fa-landmark"></i>

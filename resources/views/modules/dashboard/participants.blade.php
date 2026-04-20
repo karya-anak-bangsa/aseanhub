@@ -14,7 +14,11 @@
             'Email Account' => $participants->email,
         ]" />
 
-    <x-modules.callout type="info" color="info" icon="fa-chart-simple">
-        Statistical Information of ASEAN HUB 2026
-    </x-modules.callout>
+    {{-- @if (empty($participants->team_name))
+        <div class="alert alert-warning">
+            <strong>Incomplete Profile!</strong><br>
+            Please complete your profile information to continue in the competition.
+        </div>
+    @else
+    @endif --}}
 @endsection
