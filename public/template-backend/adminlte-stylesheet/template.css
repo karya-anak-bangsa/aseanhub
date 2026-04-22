@@ -32,10 +32,10 @@ label.required::before {
 
 /* Menengahkan semua isi tabel secara vertikal dan horizontal */
 /* Menargetkan semua sel di dalam tabel AdminLTE */
-.datatables td,
+/* .datatables td,
 .datatables th {
     vertical-align: middle !important;
-}
+} */
 
 /* Jika ingin gambar di dalam tabel juga otomatis di tengah */
 .table img {
@@ -55,6 +55,6 @@ label.required::before {
     /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05); */
 }
 
-.form-delete{
-    display:inline;
+.form-delete {
+    display: inline;
 }

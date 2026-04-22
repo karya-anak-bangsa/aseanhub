@@ -52,7 +52,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+        <a href="{{ route('admin.about-aseanhub.index') }}" class="nav-link @yield('nav-about-aseanhub')">
             <i class="nav-icon fas fa-book"></i>
             <p>About ASEAN Hub</p>
         </a>

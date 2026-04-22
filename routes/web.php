@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
 use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
 use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
+use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 
@@ -28,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 # Route Auth -------------------------------------------------------------------------------------- #
 # ------------------------------------------------------------------------------------------------- #
 Route::middleware('guest.role')->group(function () {
+
     # proses login
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.process');
@@ -48,10 +50,17 @@ Route::get('/', [LandingPageController::class, 'index'])->name('aseanhub');
 # ------------------------------------------------------------------------------------------------- #
 Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
     ->group(function () {
+
+        # Bagian 1 - Dashboard
         Route::get('/dashboard', [DashboardController::class, 'showAdmin'])->name('dashboard');
+
+        # Bagian 2 - Backend Admin
         Route::resource('judges', Adm_JudgesController::class);
         Route::resource('participants', Adm_ParticipantsController::class);
         Route::resource('voters', Adm_VotersController::class);
+
+        # Bagian 3 - Backend Landing Page
+        Route::resource('about-aseanhub', Adm_AboutAseanHubController::class);
         Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
         Route::resource('timeline', Adm_TimelineController::class);
     });

@@ -7,7 +7,7 @@
                 <div class="col-lg-7">
                     <div class="hero-copy">
                         <h1>{{ $about_aseanhub?->title ?? 'Default Title' }}</h1>
-                        <p>
+                        <p style="text-align: justify;">
                             {{ $about_aseanhub?->description ?? 'Default description' }}
                         </p>
                         <div class="hero-btns">
