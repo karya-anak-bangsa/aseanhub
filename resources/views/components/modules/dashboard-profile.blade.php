@@ -57,7 +57,7 @@
             </div>
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-center">
-                    <img src="{{ asset('storage/images/dki-jakarta.png') }}"
+                    <img src="{{ asset('img/dki-jakarta.png') }}"
                         class="img-fluid" width="128" height="128" loading="lazy" alt="DKI Jakarta">
                 </div>
             </div>
