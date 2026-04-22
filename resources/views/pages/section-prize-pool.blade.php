@@ -1,5 +1,5 @@
 <section id="campus-facilities" class="campus-facilities section light-background">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
 
         <div class="section-title">
             <h2>Prize Pool</h2>

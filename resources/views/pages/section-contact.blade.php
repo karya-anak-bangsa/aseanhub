@@ -1,5 +1,5 @@
 <section id="contact" class="contact section light-background">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
 
         <div class="section-title">
             <h2>Contact Us</h2>

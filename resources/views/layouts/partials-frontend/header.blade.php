@@ -8,11 +8,10 @@
                 <img src="{{ asset('img/dki-500.webp') }}" alt="">
             </a>
         </div>
-        <div class="contact-info">
-            {{-- Setelah Users Login --}}
+        {{-- <div class="contact-info">
             <i class="bi bi-person-fill-check"></i>
             <span>Hi, Aryajaya Alamsyah, you are logged in as Voters</span>
-        </div>
+        </div> --}}
     </div>
 
     <div class="header-main d-flex align-items-center justify-content-between">

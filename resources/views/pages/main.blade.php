@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-    @include('pages.section-hero')
+    @include('pages.section-about-aseanhub')
     @include('pages.section-opening-speech')
     @include('pages.section-competition')
     @include('pages.section-site-map')

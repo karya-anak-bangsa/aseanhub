@@ -1,5 +1,5 @@
 <section id="academics" class="academics section light-background">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
 
         <div class="section-title">
             <h2>Our Judges</h2>
