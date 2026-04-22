@@ -24,13 +24,13 @@
                 cancelButtonColor: '#6c757e'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire({
-                        title: 'Processing...',
-                        allowOutsideClick: false,
-                        didOpen: () => {
-                            Swal.showLoading();
-                        }
-                    });
+                    // Swal.fire({
+                    //     title: 'Processing...',
+                    //     allowOutsideClick: false,
+                    //     didOpen: () => {
+                    //         Swal.showLoading();
+                    //     }
+                    // });
                     form.submit();
                 }
             });
