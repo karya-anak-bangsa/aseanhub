@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             # Hak Akses
-            // AdminSeeder::class,
-            // JudgesSeeder::class,
-            // ParticipantsSeeder::class,
-            // VotersSeeder::class,
+            AdminSeeder::class,
+            JudgesSeeder::class,
+            ParticipantsSeeder::class,
+            VotersSeeder::class,
 
             # Frontend
             AboutAseanHubSeeder::class,
