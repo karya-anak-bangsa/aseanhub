@@ -46,7 +46,7 @@
                     </td>
                     <td class="text-left">{{ $item->message ?? '-' }}</td>
                     <td class="text-center">
-                        <a href="{{-- route('admin.opening-speeches.edit', $data->id_opening_speeches) --}}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.opening-speeches.edit', $item->id_opening_speeches) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
                         </a>
                     </td>

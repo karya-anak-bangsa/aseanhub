@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\OpeningSpeeches;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OpeningSpeechesController extends Controller
 {
@@ -41,7 +42,37 @@ class OpeningSpeechesController extends Controller
 
     public function update(Request $request, string $id)
     {
-        //
+        $data = OpeningSpeeches::findOrFail($id);
+
+        $request->validate([
+            'name'      => 'required',
+            'position'  => 'required',
+            'message'   => 'required',
+            'photo'     => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $updateData = $request->only(['name', 'position', 'message']);
+
+        if ($request->hasFile('photo')) {
+
+            // hapus lama
+            if ($data->photo && Storage::disk('public')->exists($data->photo)) {
+                Storage::disk('public')->delete($data->photo);
+            }
+
+            // upload baru
+            $updateData['photo'] = $request->file('photo')->store('opening-speeches', 'public');
+        }
+
+        $data->update($updateData);
+
+        return redirect()
+            ->route('admin.opening-speeches.index')
+            ->with('notify', [
+                'type' => 'success',
+                'title' => 'Berhasil',
+                'message' => 'Opening Speech berhasil diupdate'
+            ]);
     }
 
     public function destroy(string $id)

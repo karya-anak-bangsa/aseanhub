@@ -4,6 +4,7 @@
 @include('components.datatables.styles')
 @include('components.notify.styles')
 
+{{-- content --}}
 @section('nav-about-aseanhub', 'active')
 @section('content')
 
