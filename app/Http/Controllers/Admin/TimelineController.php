@@ -3,28 +3,23 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Services\TimelineService;
 use Illuminate\Http\Request;
+use App\Models\Timeline;
 
 class TimelineController extends Controller
 {
-    protected $service;
-
-    public function __construct(TimelineService $service)
-    {
-        $this->service = $service;
-    }
 
     public function index()
     {
-        $data = $this->service->getAll();
+        $data = Timeline::where('status_data', 'Active')
+            ->orderBy('date_start', 'asc')
+            ->get();
         return view('modules.timeline.index', compact('data'));
     }
 
     public function show(string $id)
     {
-        $data = $this->service->findById($id);
-        return view('modules.timeline.show', compact('data'));
+        //
     }
 
     public function create()
@@ -39,12 +34,37 @@ class TimelineController extends Controller
 
     public function edit(string $id)
     {
-        //
+
+        $data = Timeline::findOrFail($id);
+        return view('modules.timeline.edit', compact('data'));
     }
 
     public function update(Request $request, string $id)
     {
-        //
+        $data = Timeline::findOrFail($id);
+
+        $request->validate([
+            'title'        => 'required|string|max:255',
+            'description'  => 'nullable|string',
+            'date_start'   => 'required|date',
+            'date_end'     => 'required|date|after_or_equal:date_start',
+            'phase_key'    => 'required|string',
+        ]);
+
+        $data->update([
+            'title'        => $request->title,
+            'description'  => $request->description,
+            'date_start'   => $request->date_start,
+            'date_end'     => $request->date_end,
+            'phase_key'    => $request->phase_key,
+        ]);
+
+        return redirect()
+            ->route('admin.timeline.index')
+            ->with('notify', [
+                'status' => 'info',   // success | error | warning | info
+                'text'   => 'The data has been successfully updated',
+            ]);
     }
 
     public function destroy(string $id)

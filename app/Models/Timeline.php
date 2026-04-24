@@ -70,4 +70,14 @@ class Timeline extends Model
     const PHASE_SUBMISSION   = 'submission';
     const PHASE_ASSESSMENT   = 'assessment';
     const PHASE_ANNOUNCEMENT   = 'announcement';
+
+    public static function phaseOptions()
+    {
+        return [
+            self::PHASE_REGISTRATION => 'Registration',
+            self::PHASE_SUBMISSION   => 'Submission',
+            self::PHASE_ASSESSMENT   => 'Assessment',
+            self::PHASE_ANNOUNCEMENT => 'Announcement',
+        ];
+    }
 }

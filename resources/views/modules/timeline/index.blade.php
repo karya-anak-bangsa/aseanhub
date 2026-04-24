@@ -2,10 +2,18 @@
 
 {{-- push styles --}}
 @include('components.datatables.styles')
+@include('components.notify.styles')
 
 {{-- content --}}
 @section('nav-timeline', 'active')
 @section('content')
+
+    @if (session('notify'))
+        <div id="notify-data"
+            data-status="{{ session('notify.status') }}"
+            data-text="{{ session('notify.text') }}">
+        </div>
+    @endif
 
     {{-- - 1. Judul --}}
     <x-modules.callout>
@@ -48,7 +56,7 @@
                         @endif
                     </td>
                     <td class="text-center">
-                        <a href="{{-- route('admin.opening-speeches.edit', $item->id_opening_speeches) --}}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.timeline.edit', $item->id_timeline) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
                         </a>
                     </td>
@@ -66,3 +74,4 @@
 
 {{-- push scripts --}}
 @include('components.datatables.scripts')
+@include('components.notify.scripts')
