@@ -7,12 +7,16 @@
                 <div class="col-lg-7">
                     <div class="hero-copy">
                         <h1>{{ $about_aseanhub?->title ?? 'Default Title' }}</h1>
-                        <p style="text-align: justify;">
-                            {{ $about_aseanhub?->description ?? 'Default description' }}
+                        <p>
+                            {!! $about_aseanhub?->description ?? 'Default description' !!}
                         </p>
                         <div class="hero-btns">
-                            <a href="{{ route('register') }}" class="btn-tour"><i class="text-danger fas fa-thumbs-up"></i>Join Competition</a>
-                            <a href="{{ route('login') }}" class="btn-tour"><i class="text-danger fas fa-right-to-bracket"></i>Sign In</a>
+                            <a href="{{ route('register') }}" class="btn-tour">
+                                <i class="text-danger fas fa-thumbs-up"></i>Join Competition
+                            </a>
+                            <a href="{{ route('login') }}" class="btn-tour">
+                                <i class="text-danger fas fa-right-to-bracket"></i>Sign In
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -5,14 +5,12 @@
     </label>
 
     <select class="custom-select form-control border-dark" name="{{ $name }}" id="{{ $name }}">
-
         <option value="" disabled selected></option>
         @foreach ($options as $option)
             <option value="{{ $option }}" {{ old($name, $value) == $option ? 'selected' : '' }}>
                 {{ $option }}
             </option>
         @endforeach
-
     </select>
 
     @error($name)

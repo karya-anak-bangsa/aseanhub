@@ -32,13 +32,42 @@ class AboutAseanHubController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $data = AboutAseanHub::findOrFail($id);
+        return view('modules.about-aseanhub.edit', compact('data'));
     }
 
     public function update(Request $request, string $id)
     {
-        $data = AboutAseanHub::firstOrFail();
-        return view('modules.about-aseanhub.edit', compact('data'));
+        $data = AboutAseanHub::findOrFail($id);
+
+        $request->validate([
+            'title'         => 'required',
+            'description'   => 'required',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $updateData = [
+            'title'         => $request->title,
+            'description'   => $request->description,
+        ];
+
+        // handle upload image
+        if ($request->hasFile('image')) {
+
+            // hapus image lama (optional tapi best practice)
+            if ($data->image && Storage::disk('public')->exists($data->image)) {
+                Storage::disk('public')->delete($data->image);
+            }
+
+            // upload image baru
+            $updateData['image'] = $request->file('image')->store('about-aseanhub', 'public');
+        }
+
+        $data->update($updateData);
+
+        return redirect()
+            ->route('admin.about-aseanhub.index')
+            ->with('notify', 'Data berhasil diupdate');
     }
 
     public function destroy(string $id)

@@ -17,6 +17,7 @@
 
         {{-- plugin style - fontawesome 6.7.2 --}}
         <link rel="stylesheet" href="{{ asset('template-plugins/fontawesome-6.7.2/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('template-plugins/summernote-0.9.0/summernote-bs4.min.css') }}">
 
         {{-- template style - adminlte 3.2.0 --}}
         <link rel="stylesheet" href="{{ asset('template-backend/adminlte-3.2.0/dist/css/adminlte.min.css') }}">
@@ -81,6 +82,14 @@
 
         {{-- scripts fontawesome 6.7.2 --}}
         <script src="{{ asset('template-plugins/fontawesome-6.7.2/js/all.min.js') }}"></script>
+        <script src="{{ asset('template-plugins/summernote-0.9.0/summernote-bs4.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('.summernote').summernote({
+                    height: 250,
+                });
+            });
+        </script>
 
         @stack('scripts')
     </body>
