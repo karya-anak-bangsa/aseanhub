@@ -43,7 +43,7 @@ class AboutAseanHubController extends Controller
         $request->validate([
             'title'         => 'required',
             'description'   => 'required',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
         ]);
 
         $updateData = [
@@ -55,9 +55,9 @@ class AboutAseanHubController extends Controller
         if ($request->hasFile('image')) {
 
             // hapus image lama (optional tapi best practice)
-            if ($data->image && Storage::disk('public')->exists($data->image)) {
-                Storage::disk('public')->delete($data->image);
-            }
+            // if ($data->image && Storage::disk('public')->exists($data->image)) {
+            //     Storage::disk('public')->delete($data->image);
+            // }
 
             // upload image baru
             $updateData['image'] = $request->file('image')->store('about-aseanhub', 'public');

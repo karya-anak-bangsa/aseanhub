@@ -41,10 +41,10 @@
                         :required=true />
                 </div>
                 <div class="col-sm-12">
-                    <x-modules.form-file
+                    <x-modules.form-input
                         label="Photo"
                         name="photo"
-                        :value="$data->photo"
+                        type="file"
                         :required=false />
                 </div>
             </div>
