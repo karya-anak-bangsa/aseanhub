@@ -26,7 +26,7 @@
                 <tr>
                     <td class="text-center">
                         <img src="{{ $item->photo_url }}"
-                            class="rounded-circle" width="100" height="100" loading="lazy"
+                            class="rounded-circle" width="128" height="128" loading="lazy"
                             alt="Foto {{ $item->name }}">
                     </td>
                     <td class="text-left">

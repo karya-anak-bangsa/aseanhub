@@ -10,7 +10,7 @@
 
     <x-modules.index-form>
 
-        <form action="{{ route('admin.about-aseanhub.update', $data->id_about_aseanhub) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.about-aseanhub.update', $data->id_about_aseanhub) }}" method="post" enctype="multipart/form-data" class="confirm-submit">
 
             @csrf
             @method('PUT')
@@ -61,3 +61,4 @@
 
     </x-modules.index-form>
 @endsection
+@include('components.sweetalert.scripts-edit')

@@ -1,7 +1,18 @@
 @extends('layouts.backend')
 
+{{-- push styles --}}
+@include('components.datatables.styles')
+@include('components.notify.styles')
+
 @section('nav-about-aseanhub', 'active')
 @section('content')
+
+    @if (session('notify'))
+        <div id="notify-data"
+            data-status="{{ session('notify.status') }}"
+            data-text="{{ session('notify.text') }}">
+        </div>
+    @endif
 
     {{-- - 1. Judul --}}
     <x-modules.callout type="info">
@@ -24,7 +35,7 @@
             <tr>
                 <td class="text-center">
                     <img src="{{ $data->image_url }}"
-                        class="rounded-circle" width="100" height="100" loading="lazy"
+                        class="rounded-circle" width="128" height="128" loading="lazy"
                         alt="Foto {{ $data->title }}">
                 </td>
                 <td class="text-left">{{ $data->title ?? '-' }}</td>
@@ -44,3 +55,7 @@
     </x-modules.index-table>
 
 @endsection
+
+{{-- push scripts --}}
+@include('components.datatables.scripts')
+@include('components.notify.scripts')
