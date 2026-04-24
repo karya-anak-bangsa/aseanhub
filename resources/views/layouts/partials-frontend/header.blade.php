@@ -8,10 +8,10 @@
                 <img src="{{ asset('img/dki-500.webp') }}" alt="">
             </a>
         </div>
-        {{-- <div class="contact-info">
-            <i class="bi bi-person-fill-check"></i>
-            <span>Hi, Aryajaya Alamsyah, you are logged in as Voters</span>
-        </div> --}}
+        <div class="social-links">
+            <a href="{{ route('login') }}" class="btn btn-danger me-2">Sign In</a>
+            <a href="{{ route('register') }}" class="btn btn-primary ">Sign Up</a>
+        </div>
     </div>
 
     <div class="header-main d-flex align-items-center justify-content-between">
@@ -44,8 +44,6 @@
                 </li>
                 <li><a href="">Prize Pool</a></li>
                 <li><a href="">Judges</a></li>
-                <li><a href="{{ route('login') }}" class="btn btn-danger ms-4 me-2">Sign In</a></li>
-                <li><a href="{{ route('register') }}" class="btn btn-primary ">Sign Up</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

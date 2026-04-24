@@ -19,3 +19,6 @@
 
 7. mengatur padding headar (.header .header-main)
     dari padding: 18px 0; menjadi padding: 20px 0;
+
+8. disable css header (header .header-top .social-links a dan .header .header-top .social-links a:hover)
+    hapus css ini.

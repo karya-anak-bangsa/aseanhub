@@ -191,15 +191,15 @@ h6 {
     gap: 16px;
 }
 
-.header .header-top .social-links a {
+/* .header .header-top .social-links a {
     color: color-mix(in srgb, var(--default-color), transparent 40%);
     font-size: 15px;
     transition: 0.3s;
-}
+} */
 
-.header .header-top .social-links a:hover {
+/* .header .header-top .social-links a:hover {
     color: var(--accent-color);
-}
+} */
 
 .header .header-main {
     padding: 20px 0;
