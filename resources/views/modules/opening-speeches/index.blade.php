@@ -1,8 +1,19 @@
 @extends('layouts.backend')
 
+{{-- push styles --}}
+@include('components.datatables.styles')
+@include('components.notify.styles')
+
 {{-- content --}}
 @section('nav-opening-speeches', 'active')
 @section('content')
+
+    @if (session('notify'))
+        <div id="notify-data"
+            data-status="{{ session('notify.status') }}"
+            data-text="{{ session('notify.text') }}">
+        </div>
+    @endif
 
     {{-- - 1. Judul --}}
     <x-modules.callout type="info">
@@ -35,7 +46,7 @@
                     </td>
                     <td class="text-left">{{ $item->message ?? '-' }}</td>
                     <td class="text-center">
-                        <a href="" class="btn btn-sm btn-warning">
+                        <a href="{{-- route('admin.opening-speeches.edit', $data->id_opening_speeches) --}}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
                         </a>
                     </td>
@@ -50,3 +61,7 @@
     </x-modules.index-table>
 
 @endsection
+
+{{-- push scripts --}}
+@include('components.datatables.scripts')
+@include('components.notify.scripts')

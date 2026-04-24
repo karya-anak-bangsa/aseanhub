@@ -3,25 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Services\OpeningSpeechesService;
+use App\Models\OpeningSpeeches;
 use Illuminate\Http\Request;
 
 class OpeningSpeechesController extends Controller
 {
-
-    protected $service;
-
-    public function __construct(OpeningSpeechesService $service)
-    {
-        $this->service = $service;
-    }
 
     #--------------------------------------------------------------------------
     # INDEX + SHOW
     #--------------------------------------------------------------------------
     public function index()
     {
-        $data = $this->service->getAll();
+        $data = OpeningSpeeches::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
         return view('modules.opening-speeches.index', compact('data'));
     }
 
@@ -42,7 +35,8 @@ class OpeningSpeechesController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $data = OpeningSpeeches::findOrFail($id);
+        return view('modules.opening-speeches.edit', compact('data'));
     }
 
     public function update(Request $request, string $id)
