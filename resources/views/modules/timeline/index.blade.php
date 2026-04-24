@@ -14,9 +14,7 @@
 
     {{-- 2. Index Blade --}}
     <x-modules.index-table>
-        <x-slot:header>
-            <a href="{{ route('admin.timeline.create') }}" class="btn btn-success">Add Data</a>
-        </x-slot>
+        <x-slot:header></x-slot>
         <x-slot:thead>
             <tr>
                 <th class="text-center"></th>
@@ -26,6 +24,7 @@
                 <th class="text-left">Description</th>
                 <th class="text-left">Phase</th>
                 <th class="text-left">Is Current</th>
+                <th class="text-center">Action</th>
             </tr>
         </x-slot>
         <x-slot:tbody>
@@ -36,13 +35,22 @@
                     <td class="text-left">{{ $item->date_start->format('Y-m-d') ?? '-' }}</td>
                     <td class="text-left">{{ $item->date_end->format('Y-m-d') ?? '-' }}</td>
                     <td class="text-left">{{ $item->description ?? '-' }}</td>
-                    <td class="text-left">{{ Str::ucfirst($item->phase_key) }}</td>
-                    <td class="text-center">
-                        @if ($item->status_data == 'Active')
-                            <span class="badge badge-success badge-custom">Active</span>
+                    <td class="text-left">
+                        <span class="badge badge-info badge-custom">
+                            {{ Str::ucfirst($item->phase_key) }}
+                        </span>
+                    </td>
+                    <td class="text-left">
+                        @if ($item->is_current)
+                            <span class="badge badge-success badge-custom">Running</span>
                         @else
-                            <span class="badge badge-danger badge-custom">Inactive</span>
+                            <span class="badge badge-secondary badge-custom">Not Running</span>
                         @endif
+                    </td>
+                    <td class="text-center">
+                        <a href="{{-- route('admin.opening-speeches.edit', $item->id_opening_speeches) --}}" class="btn btn-sm btn-warning">
+                            <i class="fa-solid fa-edit"></i>
+                        </a>
                     </td>
                 </tr>
             @endforeach

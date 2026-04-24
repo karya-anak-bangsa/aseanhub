@@ -9,6 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_timeline', function (Blueprint $table) {
+
+            # primary key
             $table->id('id_timeline');
 
             # attr timeline
@@ -16,7 +18,9 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->timestamp('date_start');
             $table->timestamp('date_end');
-            $table->string('phase_key')->nullable();
+
+            # information controll (Registration, Submission, Assessment, Announcement)
+            $table->string('phase_key');
 
             # soft delete
             $table->enum('status_data', ['Active', 'Not Active'])->default('Active');
