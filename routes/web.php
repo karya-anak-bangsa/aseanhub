@@ -7,11 +7,13 @@ use App\Http\Controllers\Auth\RegisterController;
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
 
-# halaman backend - Admin
+# halaman Backend Admin
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
 use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
 use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
+
+# halaman Backend Landing Pages
 use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;

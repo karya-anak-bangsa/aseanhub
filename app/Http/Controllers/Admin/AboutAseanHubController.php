@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AboutAseanHub;
-use Illuminate\Support\Facades\Storage;
 
 class AboutAseanHubController extends Controller
 {
