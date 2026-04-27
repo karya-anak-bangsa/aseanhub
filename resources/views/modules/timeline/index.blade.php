@@ -40,8 +40,8 @@
                 <tr>
                     <td class="text-center">{{ number_format($loop->iteration) }}</td>
                     <td class="text-left">{{ $item->title ?? '-' }}</td>
-                    <td class="text-left">{{ $item->date_start->format('Y-m-d') ?? '-' }}</td>
-                    <td class="text-left">{{ $item->date_end->format('Y-m-d') ?? '-' }}</td>
+                    <td class="text-left">{{ $item->date_start_formatted }}</td>
+                    <td class="text-left">{{ $item->date_end_formatted }}</td>
                     <td class="text-left">{{ $item->description ?? '-' }}</td>
                     <td class="text-left">
                         <span class="badge badge-info badge-custom">

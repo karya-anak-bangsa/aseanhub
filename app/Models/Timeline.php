@@ -43,33 +43,33 @@ class Timeline extends Model
         'date_end' => 'datetime',
     ];
 
-    #--------------------------------------------------------------------------
-    # CURRENT PHASE (SOURCE OF TRUTH)
-    #--------------------------------------------------------------------------
-    public static function currentPhase()
-    {
-        return self::where('status_data', 'Active')
-            ->where('date_start', '<=', now())
-            ->where('date_end', '>=', now())
-            ->orderBy('date_start')
-            ->first();
-    }
 
     #--------------------------------------------------------------------------
     # ACCESSOR (FOR UI)
     #--------------------------------------------------------------------------
     public function getIsCurrentAttribute()
     {
-        return now()->between($this->date_start, $this->date_end);
+        // return now()->between($this->date_start, $this->date_end);
+        return $this->status_data === 'Active' && now()->between($this->date_start, $this->date_end);
+    }
+
+    public function getDateStartFormattedAttribute()
+    {
+        return $this->date_start->translatedFormat('d F Y');
+    }
+
+    public function getDateEndFormattedAttribute()
+    {
+        return $this->date_end->translatedFormat('d F Y');
     }
 
     #--------------------------------------------------------------------------
     # CONSTANT (PHASE KEY)
     #--------------------------------------------------------------------------
-    const PHASE_REGISTRATION = 'registration';
-    const PHASE_SUBMISSION   = 'submission';
-    const PHASE_ASSESSMENT   = 'assessment';
-    const PHASE_ANNOUNCEMENT   = 'announcement';
+    const PHASE_REGISTRATION = 'Registration';
+    const PHASE_SUBMISSION   = 'Submission';
+    const PHASE_ASSESSMENT   = 'Assessment';
+    const PHASE_ANNOUNCEMENT   = 'Announcement';
 
     public static function phaseOptions()
     {
