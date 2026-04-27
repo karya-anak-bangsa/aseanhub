@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
 
             # Frontend
             AboutAseanHubSeeder::class,
-            TimelineSeeder::class,
             OpeningSpeechesSeeder::class,
+            AboutCompetitionSeeder::class,
+            TimelineSeeder::class,
 
         ]);
     }

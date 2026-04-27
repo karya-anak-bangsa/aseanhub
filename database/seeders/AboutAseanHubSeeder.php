@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\AboutAseanHub;
+use Illuminate\Database\Seeder;
 
 class AboutAseanHubSeeder extends Seeder
 {
