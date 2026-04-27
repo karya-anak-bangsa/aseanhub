@@ -9,20 +9,24 @@
             <div class="row align-items-center gy-4">
                 <div class="col-lg-2">
                     <div class="event-cal">
-                        <span class="ec-month">APR</span>
-                        <span class="ec-day">30</span>
+                        <span class="ec-month">
+                            {{ strtoupper($about_competition->event_date?->translatedFormat('M')) }}
+                        </span>
+                        <span class="ec-day">
+                            {{ $about_competition->event_date?->format('d') }}
+                        </span>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="event-info">
-                        <span class="event-tag">Be sure to come</span>
-                        <h3>Opening Ceremony of the ASEAN Hub at Jakarta City Hall</h3>
-                        <p>Join us for the official opening ceremony of the ASEAN Hub at Jakarta City Hall. This event marks the beginning of a collaborative journey to promote innovation, creativity, and sustainable development across ASEAN.</p>
+                        <span class="event-tag">{{ $about_competition->tag ?? '-' }}</span>
+                        <h3>{{ $about_competition->title ?? '-' }}</h3>
+                        <p>{{ $about_competition->description ?? '-' }}</p>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="event-actions">
-                        <a href="" class="btn-rsvp"><i class="fa-solid fa-thumbs-up me-2"></i>Join Competition</a>
+                        <a href="{{ route('register') }}" class="btn-rsvp"><i class="fa-solid fa-thumbs-up me-2"></i>Join Competition</a>
                     </div>
                 </div>
                 {{-- col --}}
@@ -35,13 +39,15 @@
             <div class="row align-items-center gy-4">
                 <div class="col-lg-8">
                     <div class="event-info">
-                        <h3>Term of Services</h3>
-                        <p>Access the official guidelines, eligibility criteria, and submission requirements for the ASEAN Hub International Design Competition. Make sure your work aligns with all standards before submitting.</p>
+                        <h3>{{ $about_competition->title_tor ?? '-' }}</h3>
+                        <p>{{ $about_competition->description_tor ?? '-' }}</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="event-actions">
-                        <a href="" class="btn-rsvp"><i class="fas fa-download me-2"></i>Download</a>
+                        <a href="{{ $about_competition->file_path ? asset('storage/' . $about_competition->file_path) : '#' }}" class="btn-rsvp" download>
+                            <i class="fas fa-download me-2"></i>Download
+                        </a>
                     </div>
                 </div>
             </div>

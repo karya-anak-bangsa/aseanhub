@@ -39,6 +39,7 @@ class AboutCompetition extends Model
 
     # ...
     protected $casts = [
+        'event_date' => 'date',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
