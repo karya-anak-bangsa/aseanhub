@@ -9536,7 +9536,7 @@ section,
 .alumni .gatherings-section .gathering-card .gathering-header {
     display: flex;
     align-items: center;
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.25rem;
     background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
     border-bottom: 2px solid
         color-mix(in srgb, var(--accent-color), transparent 75%);
@@ -9551,7 +9551,7 @@ section,
     color: var(--contrast-color);
     border-radius: 8px;
     min-width: 60px;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     margin-right: 1.25rem;
     flex-shrink: 0;
 }

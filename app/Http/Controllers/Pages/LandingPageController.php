@@ -18,7 +18,7 @@ class LandingPageController extends Controller
 
         $about_aseanhub     = AboutAseanHub::where('status_data', 'Active')->first();
         $opening_speeches   = OpeningSpeeches::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
-        $timelines          = Timeline::orderBy('date_start', 'asc')->get();
+        $timelines          = Timeline::where('status_data', 'Active')->orderBy('date_start', 'asc')->get();
         $judges             = Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
 
         return view('pages.main', compact(

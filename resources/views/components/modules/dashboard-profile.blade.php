@@ -25,17 +25,9 @@
             <div class="card-footer">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="text-left text-dark">
-
-                        @if (empty($participants->team_name))
-                            <a href="{{-- route('participants.profile.create') --}}" class="btn btn-outline-danger">
-                                <i class="fa-solid fa-user-pen mr-2"></i>Update Profile
-                            </a>
-                        @else
-                            <a href="{{ url('/') }}" class="btn btn-outline-danger">
-                                <i class="fa-solid fa-tv mr-2"></i>Back to Website ASEAN HUB
-                            </a>
-                        @endif
-
+                        <a href="{{ url('/') }}" class="btn btn-outline-danger">
+                            <i class="fa-solid fa-tv mr-2"></i>Back to Website ASEAN HUB
+                        </a>
                     </div>
                     <div class="text-right text-muted">
                         <small class="text-danger">You logged on {{ now()->format('Y-m-d') }} - {{ now()->format('H:i') }} WIB</small>

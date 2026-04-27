@@ -1,7 +1,7 @@
 {{-- Sumber : index.html - hero section  --}}
 
 <section id="hero" class="hero section light-background">
-    <div class="container" data-aos="fade-up">
+    <div class="container"> {{-- data-aos="fade-up" --}}
         <div class="hero-block">
             <div class="row align-items-center g-4 g-xl-5">
                 <div class="col-lg-7">

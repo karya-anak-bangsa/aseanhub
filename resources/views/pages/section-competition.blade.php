@@ -1,5 +1,5 @@
 <section id="hero" class="hero section light-background">
-    <div class="container" data-aos="fade-up">
+    <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">
             <h2>About Competition</h2>
