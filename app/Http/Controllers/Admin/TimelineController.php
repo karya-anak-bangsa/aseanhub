@@ -11,9 +11,7 @@ class TimelineController extends Controller
 
     public function index()
     {
-        $data = Timeline::where('status_data', 'Active')
-            ->orderBy('date_start', 'asc')
-            ->get();
+        $data = Timeline::where('status_data', 'Active')->orderBy('date_start', 'asc')->get();
         return view('modules.timeline.index', compact('data'));
     }
 

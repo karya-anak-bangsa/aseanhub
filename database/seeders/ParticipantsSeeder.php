@@ -11,6 +11,7 @@ class ParticipantsSeeder extends Seeder
     public function run(): void
     {
         # data dummy
+        Participants::truncate();
         Participants::factory()->count(30)->create();
 
         # data example

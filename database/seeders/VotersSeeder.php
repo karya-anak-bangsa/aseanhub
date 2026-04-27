@@ -10,6 +10,7 @@ class VotersSeeder extends Seeder
 {
     public function run(): void
     {
+        Voters::truncate();
         Voters::factory()->count(30)->create();
         Voters::create([
             'voters_name'           => 'Example Voters',

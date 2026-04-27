@@ -21,9 +21,7 @@
     </x-modules.callout>
 
     <x-modules.index-table>
-        <x-slot:header>
-
-        </x-slot>
+        <x-slot:header></x-slot>
         <x-slot:thead>
             <tr>
                 <th width="15%" class="text-center">Image</th>

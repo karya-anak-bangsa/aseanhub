@@ -9,6 +9,7 @@ class TimelineSeeder extends Seeder
 {
     public function run(): void
     {
+        Timeline::truncate();
         Timeline::insert([
             [
                 'title'         => 'Registration Phase',

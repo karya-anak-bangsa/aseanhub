@@ -9,6 +9,7 @@ class RewardSeeder extends Seeder
 {
     public function run(): void
     {
+        Reward::truncate();
         Reward::create([
             'title'         => '1st Winner',
             'amount'        => '10000',
