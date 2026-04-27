@@ -45,12 +45,12 @@
 
     {{-- Company Profile --}}
     <li class="nav-header mt-2">COMPANY PROFILE</li>
-    <li class="nav-item">
-        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+    {{-- <li class="nav-item">
+        <a href="" class="nav-link @yield('nav-test')">
             <i class="nav-icon fas fa-landmark"></i>
             <p>Identitas Website</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="{{ route('admin.about-aseanhub.index') }}" class="nav-link @yield('nav-about-aseanhub')">
             <i class="nav-icon fas fa-book"></i>

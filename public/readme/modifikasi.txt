@@ -22,3 +22,6 @@
 
 8. disable css header (header .header-top .social-links a dan .header .header-top .social-links a:hover)
     hapus css ini.
+
+9. Hapus efek-efek (.hero .event-block .event-actions .btn-rsvp:hover)
+    background dan box-shadow

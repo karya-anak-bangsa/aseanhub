@@ -1388,10 +1388,10 @@ section,
 }
 
 .hero .event-block .event-actions .btn-rsvp:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 15%);
+    /* background: color-mix(in srgb, var(--accent-color), transparent 15%); */
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px
-        color-mix(in srgb, var(--accent-color), transparent 65%);
+    /* box-shadow: 0 8px 20px
+        color-mix(in srgb, var(--accent-color), transparent 65%); */
 }
 
 .hero .event-block .event-actions .event-timer {
