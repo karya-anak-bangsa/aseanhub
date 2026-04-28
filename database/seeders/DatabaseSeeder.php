@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             OpeningSpeechesSeeder::class,
             AboutCompetitionSeeder::class,
             TimelineSeeder::class,
+            SiteAreaSeeder::class,
 
         ]);
     }

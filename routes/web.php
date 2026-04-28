@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubContr
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
 use App\Http\Controllers\Admin\AboutCompetitionController as Adm_AboutCompetitionController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
+use App\Http\Controllers\Admin\SiteAreaController as Adm_SiteAreaController;
 
 # halaman backend - Judges
 
@@ -67,6 +68,7 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
         Route::resource('about-competition', Adm_AboutCompetitionController::class);
         Route::resource('timeline', Adm_TimelineController::class);
+        Route::resource('site-area', Adm_SiteAreaController::class);
     });
 
 # ------------------------------------------------------------------------------------------------- #
