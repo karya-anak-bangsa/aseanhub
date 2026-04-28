@@ -42,19 +42,19 @@
                     <td class="text-left">{{ $item->description ?? '-' }}</td>
                     <td class="text-center">
                         @if ($item->file_path)
-                            <a href="{{ asset('storage/' . $data->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
+                            <a href="{{ asset('storage/' . $item->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
                                 <i class="fa-solid fa-download"></i>
                             </a>
                         @else
-                            -
+                            <span class="badge badge-danger badge-custom">Not Found</span>
                         @endif
-                        <a href="{{-- route('admin.about-competition.edit', $data->id_about_competition) --}}" class="btn btn-sm btn-info">
-                            <i class="fa-solid fa-download"></i>
-                        </a>
                     </td>
                     <td class="text-center">
-                        <a href="{{-- route('admin.about-competition.edit', $data->id_about_competition) --}}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
+                        </a>
+                        <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
+                            Edit
                         </a>
                     </td>
                 </tr>

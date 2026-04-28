@@ -37,7 +37,7 @@ class AboutCompetitionController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $data = AboutCompetition::first();
+        $data = AboutCompetition::first($id);
 
         $request->validate([
             'tag'               => 'required|string|max:255',

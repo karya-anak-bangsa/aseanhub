@@ -35,7 +35,7 @@ class SiteAreaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        #
     }
 
     /**
@@ -43,7 +43,8 @@ class SiteAreaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = SiteArea::findOrFail($id);
+        return view('modules.site-area.edit', compact('data'));
     }
 
     /**
