@@ -44,4 +44,9 @@ class AboutCompetition extends Model
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
     ];
+
+    public function getEventDateFormattedAttribute()
+    {
+        return $this->event_date->translatedFormat('d F Y');
+    }
 }

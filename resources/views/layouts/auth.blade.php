@@ -36,7 +36,7 @@
             #auth-left {
                 background-image:
                     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                    url('{{ asset('/img/hero.webp') }}');
+                    url('{{ asset('/img/default-hero.webp') }}');
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;

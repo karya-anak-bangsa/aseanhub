@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
 # halaman Backend Landing Pages
 use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
+use App\Http\Controllers\Admin\AboutCompetitionController as Adm_AboutCompetitionController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 
 # halaman backend - Judges
@@ -64,6 +65,7 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         # Bagian 3 - Backend Landing Page
         Route::resource('about-aseanhub', Adm_AboutAseanHubController::class);
         Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
+        Route::resource('about-competition', Adm_AboutCompetitionController::class);
         Route::resource('timeline', Adm_TimelineController::class);
     });
 

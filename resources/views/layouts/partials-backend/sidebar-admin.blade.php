@@ -53,7 +53,7 @@
     </li> --}}
     <li class="nav-item">
         <a href="{{ route('admin.about-aseanhub.index') }}" class="nav-link @yield('nav-about-aseanhub')">
-            <i class="nav-icon fas fa-book"></i>
+            <i class="nav-icon fa-solid fa-landmark"></i>
             <p>About ASEAN Hub</p>
         </a>
     </li>
@@ -61,6 +61,12 @@
         <a href="{{ route('admin.opening-speeches.index') }}" class="nav-link @yield('nav-opening-speeches')">
             <i class="nav-icon fas fa-comment-dots"></i>
             <p>Opening Speeches</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('admin.about-competition.index') }}" class="nav-link @yield('nav-about-competition')">
+            <i class="nav-icon fas fa-message"></i>
+            <p>About Competition</p>
         </a>
     </li>
     <li class="nav-item">

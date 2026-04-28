@@ -70,7 +70,7 @@ class OpeningSpeechesController extends Controller
             ->route('admin.opening-speeches.index')
             ->with('notify', [
                 'status' => 'info',   // success | error | warning | info
-                'text'   => 'The data has been successfully updated',
+                'text'   => 'Data successfully updated',
             ]);
     }
 
