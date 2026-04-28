@@ -70,7 +70,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="{{-- route('admin.test') --}}" class="nav-link @yield('nav-test')">
+        <a href="{{ route('admin.site-area.index') }}" class="nav-link @yield('nav-site-area')">
             <i class="nav-icon fas fa-map"></i>
             <p>Site Area</p>
         </a>

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('nav-opening-speeches', 'active')
+@section('nav-timeline', 'active')
 @section('content')
 
     {{-- HEADER --}}

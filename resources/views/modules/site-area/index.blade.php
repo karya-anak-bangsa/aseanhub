@@ -1,1 +1,73 @@
+@extends('layouts.backend')
 
+{{-- push styles --}}
+@include('components.datatables.styles')
+@include('components.notify.styles')
+
+{{-- content --}}
+@section('nav-site-area', 'active')
+@section('content')
+
+    @if (session('notify'))
+        <div id="notify-data"
+            data-status="{{ session('notify.status') }}"
+            data-text="{{ session('notify.text') }}">
+        </div>
+    @endif
+
+    <x-modules.callout type="info">
+        Information of Site Area on ASEAN Hub
+    </x-modules.callout>
+
+    <x-modules.index-table>
+        <x-slot:header></x-slot>
+        <x-slot:thead>
+            <tr>
+                <th width="15%" class="text-center">Image</th>
+                <th width="25%" class="text-left">Title</th>
+                <th width="40%" class="text-left">Description</th>
+                <th width="10%" class="text-left">File Path</th>
+                <th width="10%" class="text-center">Action</th>
+            </tr>
+        </x-slot>
+        <x-slot:tbody>
+            @foreach ($data as $item)
+                <tr>
+                    <td class="text-center">
+                        <img src="{{ $item->image_url }}"
+                            class="rounded-circle" width="128" height="128" loading="lazy"
+                            alt="Foto {{ $item->title }}">
+                    </td>
+                    <td class="text-left">{{ $item->title ?? '-' }}</td>
+                    <td class="text-left">{{ $item->description ?? '-' }}</td>
+                    <td class="text-center">
+                        @if ($item->file_path)
+                            <a href="{{ asset('storage/' . $data->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        @else
+                            -
+                        @endif
+                        <a href="{{-- route('admin.about-competition.edit', $data->id_about_competition) --}}" class="btn btn-sm btn-info">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{-- route('admin.about-competition.edit', $data->id_about_competition) --}}" class="btn btn-sm btn-warning">
+                            <i class="fa-solid fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+        </x-slot>
+        <x-slot:footer>
+            <small class="text-danger">
+                <div class="text-right">Data Access {{ now()->format('Y/m/d - H:i') }} WIB</div>
+            </small>
+        </x-slot>
+    </x-modules.index-table>
+@endsection
+
+{{-- push scripts --}}
+@include('components.datatables.scripts')
+@include('components.notify.scripts')

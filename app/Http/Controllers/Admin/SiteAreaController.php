@@ -10,7 +10,7 @@ class SiteAreaController extends Controller
 {
     public function index()
     {
-        $data = SiteArea::first();
+        $data = SiteArea::orderBy('sort_order')->get();
         return view('modules.site-area.index', compact('data'));
     }
 

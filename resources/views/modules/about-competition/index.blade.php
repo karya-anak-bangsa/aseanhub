@@ -41,7 +41,7 @@
                 <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($data->description_tor), 150) !!}</td>
                 <td class="text-left">
                     @if ($data->file_path)
-                        <a href="{{ asset('storage/' . $data->file_path) }}" class="btn btn-sm btn-info" target="_blank">
+                        <a href="{{ asset('storage/' . $data->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
                             <i class="fa-solid fa-download"></i>
                         </a>
                     @else
