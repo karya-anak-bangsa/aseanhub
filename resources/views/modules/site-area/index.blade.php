@@ -25,8 +25,7 @@
             <tr>
                 <th width="15%" class="text-center">Image</th>
                 <th width="25%" class="text-left">Title</th>
-                <th width="40%" class="text-left">Description</th>
-                <th width="10%" class="text-left">File Path</th>
+                <th width="50%" class="text-left">Description</th>
                 <th width="10%" class="text-center">Action</th>
             </tr>
         </x-slot>
@@ -40,15 +39,6 @@
                     </td>
                     <td class="text-left">{{ $item->title ?? '-' }}</td>
                     <td class="text-left">{{ $item->description ?? '-' }}</td>
-                    <td class="text-center">
-                        @if ($item->file_path)
-                            <a href="{{ asset('storage/' . $item->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                        @else
-                            <span class="badge badge-danger badge-custom">Not Found</span>
-                        @endif
-                    </td>
                     <td class="text-center">
                         <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>

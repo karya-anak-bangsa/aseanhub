@@ -23,12 +23,10 @@
         <x-slot:header></x-slot>
         <x-slot:thead>
             <tr>
-                <th class="text-left">Title</th>
-                <th class="text-left">Description</th>
-                <th class="text-left">Date</th>
+                <th class="text-left">Competition</th>
+                <th class="text-left">Description Competition</th>
                 <th class="text-left">TOR</th>
                 <th class="text-left">Description TOR</th>
-                <th class="text-left">File</th>
                 <th class="text-center">Action</th>
             </tr>
         </x-slot>
@@ -36,18 +34,8 @@
             <tr>
                 <td class="text-left">{{ $data->title ?? '-' }}</td>
                 <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($data->description), 150) !!}</td>
-                <td class="text-left">{{ $data->event_date_formatted ?? '-' }}</td>
                 <td class="text-left">{{ $data->title_tor ?? '-' }}</td>
                 <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($data->description_tor), 150) !!}</td>
-                <td class="text-left">
-                    @if ($data->file_path)
-                        <a href="{{ asset('storage/' . $data->file_path) }}" class="btn btn-sm btn-info" target="_blank" download>
-                            <i class="fa-solid fa-download"></i>
-                        </a>
-                    @else
-                        -
-                    @endif
-                </td>
                 <td class="text-center">
                     <a href="{{ route('admin.about-competition.edit', $data->id_about_competition) }}" class="btn btn-sm btn-warning">
                         <i class="fa-solid fa-edit"></i>
