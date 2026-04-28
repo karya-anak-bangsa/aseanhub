@@ -41,4 +41,22 @@ class SiteArea extends Model
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
     ];
+
+    protected function imageUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->image
+                ? asset('storage/' . $this->image)
+                : asset('img/404.png')
+        );
+    }
+
+    protected function fileUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->file_path
+                ? asset('storage/' . $this->file_path)
+                : null
+        );
+    }
 }
