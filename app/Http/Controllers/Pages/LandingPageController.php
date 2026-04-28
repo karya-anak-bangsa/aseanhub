@@ -10,6 +10,7 @@ use App\Models\AboutAseanHub;
 use App\Models\OpeningSpeeches;
 use App\Models\AboutCompetition;
 use App\Models\Timeline;
+use App\Models\SiteArea;
 use App\Models\Judges;
 
 class LandingPageController extends Controller
@@ -21,6 +22,7 @@ class LandingPageController extends Controller
         $opening_speeches       = OpeningSpeeches::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
         $about_competition      = AboutCompetition::where('status_data', 'Active')->first();
         $timelines              = Timeline::where('status_data', 'Active')->orderBy('date_start', 'asc')->get();
+        $site_area              = SiteArea::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
         $judges                 = Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
 
         return view('pages.main', compact(
@@ -28,6 +30,7 @@ class LandingPageController extends Controller
             'opening_speeches',
             'about_competition',
             'timelines',
+            'site_area',
             'judges',
         ));
     }
