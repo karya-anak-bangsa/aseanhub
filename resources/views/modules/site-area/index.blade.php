@@ -53,9 +53,6 @@
                         <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
                         </a>
-                        <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
-                            Edit
-                        </a>
                     </td>
                 </tr>
             @endforeach
