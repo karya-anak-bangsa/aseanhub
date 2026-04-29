@@ -40,7 +40,7 @@ class OpeningSpeeches extends Model
         return Attribute::make(
             get: fn() => $this->photo
                 ? asset('storage/' . $this->photo)
-                : asset('img/default-user.png'),
+                : asset('storage/default/default-user.png'),
         );
     }
 }
