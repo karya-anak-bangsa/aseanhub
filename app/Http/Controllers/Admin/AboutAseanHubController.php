@@ -52,13 +52,6 @@ class AboutAseanHubController extends Controller
 
         // handle upload image
         if ($request->hasFile('image')) {
-
-            // hapus image lama (optional tapi best practice)
-            // if ($data->image && Storage::disk('public')->exists($data->image)) {
-            //     Storage::disk('public')->delete($data->image);
-            // }
-
-            // upload image baru
             $updateData['image'] = $request->file('image')->store('about-aseanhub', 'public');
         }
 
