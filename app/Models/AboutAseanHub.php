@@ -46,7 +46,7 @@ class AboutAseanHub extends Model
         return Attribute::make(
             get: fn() => $this->image
                 ? asset('storage/' . $this->image)
-                : asset('img/default-hero.webp'),
+                : asset('storage/default/default-hero.webp'),
         );
     }
 }
