@@ -28,7 +28,6 @@ class AboutAseanHub extends Model
         'status_data',
     ];
 
-
     # ...
     protected $attributes = [
         'status_data' => 'Active',
