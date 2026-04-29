@@ -1,16 +1,3 @@
-@php
-    function phaseColor($phase)
-    {
-        return match ($phase) {
-            'Registration' => 'bg-success',
-            'Submission' => 'bg-primary',
-            'Assessment' => 'bg-warning',
-            'Announcement' => 'bg-danger',
-            default => 'bg-secondary',
-        };
-    }
-@endphp
-
 <section id="alumni" class="alumni section light-background">
     <div class="container"> {{-- data-aos="fade-up" --}}
 
