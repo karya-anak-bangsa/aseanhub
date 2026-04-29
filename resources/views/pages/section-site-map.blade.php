@@ -2,7 +2,7 @@
     <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">
-            <h2>Site Area</h2>
+            <h2>Site Area on ASEAN Hub</h2>
         </div>
 
         <div class="facilities-showcase">
@@ -17,9 +17,7 @@
                     {{-- IMAGE --}}
                     <div class="col-lg-6 {{ $isReverse ? 'order-lg-2' : '' }}">
                         <div class="showcase-image">
-                            <img src="{{ asset('storage/' . $item->image) }}"
-                                alt="{{ $item->title }}"
-                                class="img-fluid">
+                            <img src="{{ $item?->image_url }}" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -28,8 +26,8 @@
                         <div class="showcase-content text-center">
                             <h3>{{ $item->title }}</h3>
                             <p>{{ $item->description }}</p>
-                            @if ($item->file_path)
-                                <a href="{{ asset('storage/' . $item->file_path) }}" class="discover-link" target="_blank" download>
+                            @if ($item->file_url)
+                                <a href="{{ $item->file_url }}" class="discover-link" target="_blank" download>
                                     <i class="fas fa-download"></i> Download Map
                                 </a>
                             @endif

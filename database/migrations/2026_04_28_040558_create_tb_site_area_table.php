@@ -12,8 +12,12 @@ return new class extends Migration
 
             # ...
             $table->id('id_site_area');
+
+            # ...
             $table->string('title');
             $table->text('description')->nullable();
+
+            # ...
             $table->string('image')->nullable();
             $table->string('file_path')->nullable();
             $table->integer('sort_order')->default(0);

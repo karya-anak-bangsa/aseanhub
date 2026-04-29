@@ -4,10 +4,8 @@
     @include('pages.section-about-aseanhub')
     @include('pages.section-opening-speech')
     @include('pages.section-about-competition')
-
     @include('pages.section-timeline')
     @include('pages.section-site-map')
     @include('pages.section-prize-pool')
-
     @include('pages.section-contact')
 @endsection

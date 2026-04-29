@@ -47,7 +47,7 @@ class SiteArea extends Model
         return Attribute::make(
             get: fn() => $this->image
                 ? asset('storage/' . $this->image)
-                : asset('img/404.png')
+                : asset('storage/default/404.webp')
         );
     }
 

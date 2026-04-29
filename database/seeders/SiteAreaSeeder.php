@@ -29,7 +29,6 @@ class SiteAreaSeeder extends Seeder
             'status_data'       => 'Active',
         ]);
 
-
         SiteArea::create([
             'title'             => 'Cultural Heritage Area',
             'description'       => 'The designated cultural heritage areas within the ASEAN Hub highlight buildings and sites of historical significance that are preserved as part of the urban development strategy. These heritage elements reinforce local identity while ensuring that modernization respects and integrates the existing cultural fabric.',

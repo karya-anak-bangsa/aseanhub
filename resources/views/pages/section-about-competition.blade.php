@@ -26,7 +26,9 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="event-actions">
-                        <a href="{{ route('register') }}" class="btn-rsvp"><i class="fa-solid fa-thumbs-up me-2"></i>Join Competition</a>
+                        <a href="{{ route('register') }}" class="btn-rsvp">
+                            <i class="fa-solid fa-thumbs-up me-2"></i>Join Competition
+                        </a>
                     </div>
                 </div>
                 {{-- col --}}
@@ -52,6 +54,7 @@
                 </div>
             </div>
         </div>
+        {{-- event-block --}}
 
         <div class="features-block">
             <div class="row gy-4">
@@ -89,6 +92,7 @@
                 </div>
             </div>
         </div>
+        {{-- features-block --}}
 
     </div>
     {{-- container --}}

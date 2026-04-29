@@ -40,6 +40,7 @@ class AboutAseanHub extends Model
         'deleted_at' => 'datetime',
     ];
 
+    # ...
     protected function imageUrl(): Attribute
     {
         return Attribute::make(
