@@ -9,12 +9,8 @@
             <div class="row align-items-center gy-4">
                 <div class="col-1">
                     <div class="event-cal">
-                        <span class="ec-month">
-                            {{ strtoupper($about_competition->event_date?->translatedFormat('M')) }}
-                        </span>
-                        <span class="ec-day">
-                            {{ $about_competition->event_date?->format('d') }}
-                        </span>
+                        <span class="ec-month">{{ $about_competition->event_month }}</span>
+                        <span class="ec-day">{{ $about_competition->event_day }}</span>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -47,9 +43,11 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="event-actions">
-                        <a href="{{ $about_competition->file_path ? asset('storage/' . $about_competition->file_path) : '#' }}" class="btn-rsvp" download>
-                            <i class="fas fa-download me-2"></i>Download
-                        </a>
+                        @if ($about_competition->file_url)
+                            <a href="{{ $about_competition->file_url }}" class="btn-rsvp" download>
+                                <i class="fas fa-download me-2"></i>Download
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

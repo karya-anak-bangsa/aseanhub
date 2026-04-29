@@ -46,11 +46,20 @@ class AboutCompetition extends Model
     ];
 
     # ...
-    protected function eventDateFormatted(): Attribute
+    protected function eventMonth(): Attribute
     {
         return Attribute::make(
             get: fn() => $this->event_date
-                ? $this->event_date->translatedFormat('d F Y')
+                ? strtoupper($this->event_date->translatedFormat('M'))
+                : null,
+        );
+    }
+
+    protected function eventDay(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->event_date
+                ? $this->event_date->format('d')
                 : null,
         );
     }
