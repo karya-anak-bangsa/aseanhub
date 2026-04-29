@@ -7,7 +7,7 @@
 
         <div class="event-block">
             <div class="row align-items-center gy-4">
-                <div class="col-lg-2">
+                <div class="col-1">
                     <div class="event-cal">
                         <span class="ec-month">
                             {{ strtoupper($about_competition->event_date?->translatedFormat('M')) }}
@@ -17,7 +17,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="event-info">
                         <span class="event-tag">{{ $about_competition->tag ?? '-' }}</span>
                         <h3>{{ $about_competition->title ?? '-' }}</h3>
