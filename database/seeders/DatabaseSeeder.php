@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-
             # Hak Akses
             AdminSeeder::class,
             JudgesSeeder::class,
@@ -26,7 +25,8 @@ class DatabaseSeeder extends Seeder
             TimelineSeeder::class,
             SiteAreaSeeder::class,
             PhotoGallerySeeder::class,
-
+            NewsCategorySeeder::class,
+            NewsSeeder::class,
         ]);
     }
 }

@@ -6,20 +6,55 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('tb_news', function (Blueprint $table) {
-            $table->id();
+
+            # primary key dan foreign key
+            $table->id('id_news');
+            $table->foreignId('id_news_category')
+                ->constrained('tb_news_category', 'id_news_category')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+
+            # english
+            $table->string('title_en');
+            $table->string('slug_en')->unique();
+            $table->text('excerpt_en')->nullable();
+            $table->longText('content_en');
+            $table->string('thumbnail_en')->nullable();
+
+            # indonesia
+            $table->string('title_id');
+            $table->string('slug_id')->unique();
+            $table->text('excerpt_id')->nullable();
+            $table->longText('content_id');
+            $table->string('thumbnail_id')->nullable();
+
+            # SEO EN
+            $table->string('meta_title_en')->nullable();
+            $table->text('meta_description_en')->nullable();
+            $table->text('meta_keywords_en')->nullable();
+
+            # SEO ID
+            $table->string('meta_title_id')->nullable();
+            $table->text('meta_description_id')->nullable();
+            $table->text('meta_keywords_id')->nullable();
+
+            # publish
+            $table->string('author_name_en')->nullable();
+            $table->string('author_name_id')->nullable();
+            $table->dateTime('published_at')->nullable();
+            $table->unsignedBigInteger('views')->default(0);
+            $table->enum('status', ['Draft', 'Published', 'Archived'])->default('Draft');
+
+            # others
+            $table->enum('status_data', ['Active', 'Not Active',])->default('Active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('tb_news');

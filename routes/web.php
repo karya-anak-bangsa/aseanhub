@@ -10,6 +10,9 @@ use App\Http\Controllers\Auth\VerifyVotersEmailController;
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
 
+# halaman backend - company profile aseanhub
+use App\Http\Controllers\Admin\NewsCategoryController as Adm_NewsCategory;
+
 # halaman Backend Landing Pages
 use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
 use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesController;
@@ -75,15 +78,18 @@ Route::get('/', [LandingPageController::class, 'index'])->name('aseanhub');
 Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
     ->group(function () {
 
-        # Bagian 1 - Dashboard
+        # Dashboard
         Route::get('/dashboard', [DashboardController::class, 'showAdmin'])->name('dashboard');
 
-        # Bagian 2 - Backend Admin
+        # halaman backend - company profile aseanhub
+        Route::resource('news-category', Adm_NewsCategory::class);
+
+        # Bagian 1 - Backend Admin
         Route::resource('judges', Adm_JudgesController::class);
         Route::resource('participants', Adm_ParticipantsController::class);
         Route::resource('voters', Adm_VotersController::class);
 
-        # Bagian 3 - Backend Landing Page
+        # Bagian 2 - Backend Landing Page
         Route::resource('about-aseanhub', Adm_AboutAseanHubController::class);
         Route::resource('opening-speeches', Adm_OpeningSpeechesController::class);
         Route::resource('about-competition', Adm_AboutCompetitionController::class);

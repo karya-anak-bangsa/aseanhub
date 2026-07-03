@@ -9,17 +9,25 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_news_category', function (Blueprint $table) {
-            $table->id('id_news_category');
-            $table->string('category_name');
-            $table->string('nama_kategori');
-            $table->string('slug_en')->unique();
-            $table->string('slug_id')->unique();
-            $table->text('description')->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->unsignedInteger('sort_order')->default(0);
 
-            # ...
+            # primary key
+            $table->id('id_news_category');
+
+            # english
+            $table->string('category_name_en');
+            $table->string('slug_en')->unique();
+            $table->text('description_en')->nullable();
+
+            # indonesia
+            $table->string('category_name_id');
+            $table->string('slug_id')->unique();
+            $table->text('description_id')->nullable();
+
+            # others
+            $table->unsignedInteger('sort_order')->default(0);
             $table->enum('status_data', ['Active', 'Not Active'])->default('Active');
+
+            # others
             $table->timestamps();
             $table->softDeletes();
         });

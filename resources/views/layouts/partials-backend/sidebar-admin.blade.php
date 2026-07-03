@@ -9,6 +9,14 @@
 
     {{-- Company Profile --}}
     <li class="nav-header mt-2">COMPANY PROFILE ASEAN HUB</li>
+
+    <li class="nav-item">
+        <a href="{{ route('admin.news-category.index') }}" class="nav-link @yield('nav-news-category')">
+            <i class="nav-icon fa-solid fa-newspaper"></i>
+            <p>News Category</p>
+        </a>
+    </li>
+
     <li class="nav-item">
         <a href="{{ route('admin.about-aseanhub.index') }}" class="nav-link @yield('nav-about-aseanhub')">
             <i class="nav-icon fa-solid fa-landmark"></i>

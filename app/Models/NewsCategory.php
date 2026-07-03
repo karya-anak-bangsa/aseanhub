@@ -10,16 +10,16 @@ class NewsCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table        = 'tb_news_categories';
+    protected $table        = 'tb_news_category';
     protected $primaryKey   = 'id_news_category';
 
     protected $fillable = [
-        'category_name',
-        'nama_kategori',
+        'category_name_en',
         'slug_en',
+        'description_en',
+        'category_name_id',
         'slug_id',
-        'description',
-        'deskripsi',
+        'description_id',
         'sort_order',
         'status_data',
     ];
