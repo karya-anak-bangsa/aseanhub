@@ -31,12 +31,16 @@ class OpeningSpeechesSeeder extends Seeder
         ]);
 
         OpeningSpeeches::create([
-            'name'          => 'Tona Hutauruk, S.T., M.Sc.',
+            'name'          => 'Marulina Dewi, S.STP., MPA.',
             'position'      => 'Head of the Regional Cooperation Bureau',
             'message'       => 'Through this competition, we aim to strengthen regional cooperation by encouraging multidisciplinary innovation.
                                 We look forward to seeing ideas that combine local identity with global relevance.',
             'photo'         => 'opening-speeches/opening-03.webp',
-            'sort_order'    => 3
+            'sort_order'    => 3,
+            'status_data'   => 'Not Active',
+            'created_at'    => now(),
+            'updated_at'    => now(),
+            'deleted_at'    => now(),
         ]);
     }
 }

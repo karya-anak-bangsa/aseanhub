@@ -7,50 +7,8 @@
         </a>
     </li>
 
-    {{-- USER ACCESS --}}
-    <li class="nav-header mt-2">USER ACCESS</li>
-    <li class="nav-item">
-        <a href="{{ route('admin.judges.index') }}" class="nav-link @yield('nav-judges')">
-            <i class="nav-icon fa-solid fa-user-graduate"></i>
-            <p>Judges</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="{{ route('admin.participants.index') }}" class="nav-link @yield('nav-participants')">
-            <i class="nav-icon fa-solid fa-users"></i>
-            <p>Participants</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="{{ route('admin.voters.index') }}" class="nav-link @yield('nav-voters')">
-            <i class="nav-icon fa-solid fa-users"></i>
-            <p>Voters</p>
-        </a>
-    </li>
-
-    {{-- PARTICIPANT RESULTS --}}
-    <li class="nav-header mt-2">RESULTS OF ASEAN HUB</li>
-    <li class="nav-item">
-        <a href="" class="nav-link @yield('nav-test')">
-            <i class="nav-icon fa-solid fa-box-archive"></i>
-            <p>Urban Design</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="" class="nav-link @yield('nav-test')">
-            <i class="nav-icon fa-solid fa-file-contract"></i>
-            <p>Assessment Results</p>
-        </a>
-    </li>
-
     {{-- Company Profile --}}
-    <li class="nav-header mt-2">COMPANY PROFILE</li>
-    {{-- <li class="nav-item">
-        <a href="" class="nav-link @yield('nav-test')">
-            <i class="nav-icon fas fa-landmark"></i>
-            <p>Identitas Website</p>
-        </a>
-    </li> --}}
+    <li class="nav-header mt-2">COMPANY PROFILE ASEAN HUB</li>
     <li class="nav-item">
         <a href="{{ route('admin.about-aseanhub.index') }}" class="nav-link @yield('nav-about-aseanhub')">
             <i class="nav-icon fa-solid fa-landmark"></i>
@@ -81,10 +39,53 @@
             <p>Site Area</p>
         </a>
     </li>
+
+    <li class="nav-header mt-2">SHOWCASE ASEAN HUB</li>
     <li class="nav-item">
         <a href="{{ route('admin.photo-gallery.index') }}" class="nav-link @yield('nav-photo-gallery')">
             <i class="nav-icon fas fa-camera"></i>
-            <p>Photo Gallery</p>
+            <p>Gallery Photo</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{-- route('admin.photo-gallery.index') --}}" class="nav-link @yield('nav-photo-gallery')">
+            <i class="nav-icon fas fa-camera"></i>
+            <p>Gallery Video</p>
+        </a>
+    </li>
+
+    {{-- ------------------------------------------------------------------------------------------------------- --}}
+    {{-- ASEAN Hub Competition --}}
+    {{-- ------------------------------------------------------------------------------------------------------- --}}
+    <li class="nav-header mt-2">ASEAN Hub Competition</li>
+    <li class="nav-item">
+        <a href="{{ route('admin.judges.index') }}" class="nav-link @yield('nav-judges')">
+            <i class="nav-icon fa-solid fa-user-graduate"></i>
+            <p>Judges</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('admin.participants.index') }}" class="nav-link @yield('nav-participants')">
+            <i class="nav-icon fa-solid fa-users"></i>
+            <p>Participants</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('admin.voters.index') }}" class="nav-link @yield('nav-voters')">
+            <i class="nav-icon fa-solid fa-users"></i>
+            <p>Voters</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fa-solid fa-box-archive"></i>
+            <p>Urban Design</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link @yield('nav-test')">
+            <i class="nav-icon fa-solid fa-file-contract"></i>
+            <p>Assessment Results</p>
         </a>
     </li>
 @endif

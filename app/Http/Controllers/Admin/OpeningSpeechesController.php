@@ -61,7 +61,7 @@ class OpeningSpeechesController extends Controller
         return redirect()
             ->route('admin.opening-speeches.index')
             ->with('notify', [
-                'status' => 'info',   // success | error | warning | info
+                'status' => 'info',
                 'text'   => 'Data successfully updated',
             ]);
     }

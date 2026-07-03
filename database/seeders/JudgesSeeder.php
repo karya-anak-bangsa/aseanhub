@@ -87,7 +87,7 @@ class JudgesSeeder extends Seeder
         ]);
 
         Judges::create([
-            'judges_name'           => 'Prof. Wim van den Doel',
+            'judges_name'           => 'Prof. Wim van den Doel',
             'origin_country'        => 'Netherlands',
             'origin_institution'    => null,
             'judges_task'           => 'Assessment One',
