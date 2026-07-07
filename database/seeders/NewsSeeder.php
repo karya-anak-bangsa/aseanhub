@@ -33,13 +33,12 @@ class NewsSeeder extends Seeder
             'meta_description_id'   => null,
             'meta_keywords_id'      => 'Infrastruktur, Jakarta, ASEAN Hub',
 
-            'author_name_en'        => 'ASEAN Hub',
-            'author_name_id'        => 'ASEAN Hub',
-            'published_at'          => now(),
-            'published_status'      => 'Published',
-            'views'                 => 0,
+            'author_name'           => 'ASEAN Hub',
+            'published_date'        => now(),
+            'published_status'      => 'Archived',
+            'views'                 => 16020,
 
-            'status_data'           => 'Active',
+            'status_data'           => 'Not Active',
             'created_at'            => now(),
             'updated_at'            => now(),
         ]);
@@ -66,11 +65,10 @@ class NewsSeeder extends Seeder
             'meta_description_id'   => null,
             'meta_keywords_id'      => 'Transportasi',
 
-            'author_name_en'        => 'ASEAN Hub',
-            'author_name_id'        => 'ASEAN Hub',
-            'published_at'          => now(),
+            'author_name'           => 'ASEAN Hub',
+            'published_date'          => now(),
             'published_status'      => 'Published',
-            'views'                 => 0,
+            'views'                 => 1602,
 
             'status_data'           => 'Active',
             'created_at'            => now(),
@@ -99,11 +97,10 @@ class NewsSeeder extends Seeder
             'meta_description_id'   => null,
             'meta_keywords_id'      => 'Investasi',
 
-            'author_name_en'        => 'ASEAN Hub',
-            'author_name_id'        => 'ASEAN Hub',
-            'published_at' => now(),
-            'published_status' => 'Published',
-            'views' => 0,
+            'author_name'           => 'ASEAN Hub',
+            'published_date'        => now(),
+            'published_status'      => 'Published',
+            'views'                 => 4099,
 
             'status_data' => 'Active',
             'created_at' => now(),

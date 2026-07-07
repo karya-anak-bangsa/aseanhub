@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::with('newsCategory')->orderByDesc('published_at')->orderByDesc('id_news')->get();
+        $news = News::with('newsCategory')->orderByDesc('published_date')->orderByDesc('id_news')->get();
         return view('modules.news.index', compact('news'));
     }
 

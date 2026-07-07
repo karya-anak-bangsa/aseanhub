@@ -35,39 +35,14 @@
             @foreach ($news as $item)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}</td>
-                    <td class="text-left">
-                        {!! $item->title !!}
-                    </td>
-                    <td class="text-left">
-                        <strong>{{ $item->newsCategory->category_name_en ?? '-' }}</strong>
-
-                        <br>
-                        <small class="text-muted">
-                            {{ $item->newsCategory->category_name_id ?? '-' }}
-
-                        </small>
-                    </td>
-                    <td class="text-right">
-                        {{ $item->views_formatted }}
-                    </td>
-                    <td class="text-right">
-                        {{ $item->published_date }}
-                        <br>
-                        <small>{{ $item->published_time }}</small>
-
-                    </td>
+                    <td class="text-left"></td>
+                    <td class="text-left"></td>
+                    <td class="text-right"></td>
+                    <td class="text-right"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
                     <td class="text-center">
-                        <span class="badge badge-{{ $item->published_badge_class }} badge-custom">
-                            {{ $item->published_status }}
-                        </span>
-                    </td>
-                    <td class="text-center">
-                        <span class="badge badge-{{ $item->status_badge_class }} badge-custom">
-                            {{ $item->status_data }}
-                        </span>
-                    </td>
-                    <td class="text-center">
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <a href="#" class="btn btn-sm btn-info">
                             <i class="fa-solid fa-display"></i>
                         </a>
                         <a href="#" class="btn btn-sm btn-warning">

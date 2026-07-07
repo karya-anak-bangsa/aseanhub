@@ -43,9 +43,8 @@ class News extends Model
         'meta_keywords_id',
 
         // Publish
-        'author_name_en',
-        'author_name_id',
-        'published_at',
+        'author_name',
+        'published_date',
         'published_status',
         'views',
         'status_data'
@@ -53,50 +52,11 @@ class News extends Model
 
     # ...
     protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
-        'published_at' => 'datetime',
+        'created_at'        => 'datetime',
+        'updated_at'        => 'datetime',
+        'deleted_at'        => 'datetime',
+        'published_date'    => 'datetime',
     ];
-
-    public function getViewsFormattedAttribute(): string
-    {
-        return number_format($this->views);
-    }
-
-    public function getPublishedDateAttribute(): string
-    {
-        return $this->published_at ? $this->published_at->format('d M Y') : '-';
-    }
-
-    public function getPublishedTimeAttribute(): string
-    {
-        return $this->published_at ? $this->published_at->format('H:i') : '-';
-    }
-
-    public function getTitleAttribute(): string
-    {
-        return "
-            <strong>{$this->title_en}</strong>
-            <br>
-            <small class='text-muted'>{$this->title_id}</small>";
-    }
-
-    public function getPublishedBadgeClassAttribute(): string
-    {
-        return match ($this->published_status) {
-            'Published' => 'success',
-            'Draft' => 'warning',
-            default => 'secondary',
-        };
-    }
-
-    public function getStatusBadgeClassAttribute(): string
-    {
-        return $this->status_data == 'Active'
-            ? 'success'
-            : 'danger';
-    }
 
     public function newsCategory()
     {

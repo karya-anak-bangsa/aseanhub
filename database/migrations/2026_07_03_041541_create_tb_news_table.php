@@ -42,9 +42,8 @@ return new class extends Migration
             $table->text('meta_keywords_id')->nullable();
 
             # publish
-            $table->string('author_name_en')->nullable();
-            $table->string('author_name_id')->nullable();
-            $table->dateTime('published_at')->nullable();
+            $table->string('author_name')->nullable();
+            $table->dateTime('published_date')->nullable();
             $table->enum('published_status', ['Draft', 'Published', 'Archived'])->default('Draft');
             $table->unsignedBigInteger('views')->default(0);
 
