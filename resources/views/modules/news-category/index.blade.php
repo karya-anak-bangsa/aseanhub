@@ -19,23 +19,13 @@
             <tr>
                 <th class="text-center">No</th>
                 <th class="text-left">Category Name</th>
-                <th class="text-left">Slug</th>
-                <th class="text-left">Description</th>
-                <th class="text-center">Action</th>
             </tr>
         </x-slot>
         <x-slot:tbody>
-            @foreach ($data as $item)
+            @foreach ($newsCategories as $item)
                 <tr>
-                    <td class="text-left"></td>
-                    <td class="text-left">{{ $item->category_name_en ?? '-' }}</td>
-                    <td class="text-left">{{ $item->slug_en ?? '-' }}</td>
-                    <td class="text-left">{{ $item->description_en ?? '-' }}</td>
-                    <td class="text-center">
-                        <a href="" class="btn btn-sm btn-warning">
-                            <i class="fa-solid fa-edit"></i>
-                        </a>
-                    </td>
+                    <td class="text-center" width="15%">{{ $loop->iteration }}</td>
+                    <td class="text-left" width="85%">{{ $item->category_name_en ?? '-' }}</td>
                 </tr>
             @endforeach
         </x-slot>
@@ -45,7 +35,6 @@
             </small>
         </x-slot>
     </x-modules.index-table>
-
 @endsection
 
 {{-- push scripts --}}

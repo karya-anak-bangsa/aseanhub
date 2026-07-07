@@ -26,13 +26,6 @@
                             <span class="input-group-text"><i class="fas fa-users"></i></span>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-12 mb-3">
-                        <label for="full_name" class="form-label">Team Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="team_name" id="team_name">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-12 mb-3">
                         <label for="email" class="form-label">Email</label>
                         <div class="input-group">

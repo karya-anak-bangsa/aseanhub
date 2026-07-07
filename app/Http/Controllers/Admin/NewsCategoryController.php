@@ -10,8 +10,8 @@ class NewsCategoryController extends Controller
 {
     public function index()
     {
-        $data = NewsCategory::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
-        return view('modules.news-category.index', compact('data'));
+        $newsCategories = NewsCategory::where('status_data', 'Active')->orderBy('category_name_en')->get();
+        return view('modules.news-category.index', compact('newsCategories'));
     }
 
     public function show(string $id)

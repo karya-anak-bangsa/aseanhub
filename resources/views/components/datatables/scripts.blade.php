@@ -9,7 +9,7 @@
             $('.datatables').DataTable({
                 responsive: false,
                 autoWidth: false,
-                ordering: true,
+                ordering: false,
                 paging: true,
                 searching: true,
                 lengthChange: true,
