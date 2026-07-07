@@ -9,10 +9,12 @@
             @endisset
 
             <div class="card-body">
-                <table class="table table-bordered table-hover datatables">
-                    <thead>{{ $thead }}</thead>
-                    <tbody>{{ $tbody }}</tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover datatables">
+                        <thead>{{ $thead }}</thead>
+                        <tbody>{{ $tbody }}</tbody>
+                    </table>
+                </div>
             </div>
 
             @isset($footer)

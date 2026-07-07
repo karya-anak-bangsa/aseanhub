@@ -45,8 +45,8 @@ return new class extends Migration
             $table->string('author_name_en')->nullable();
             $table->string('author_name_id')->nullable();
             $table->dateTime('published_at')->nullable();
+            $table->enum('published_status', ['Draft', 'Published', 'Archived'])->default('Draft');
             $table->unsignedBigInteger('views')->default(0);
-            $table->enum('status', ['Draft', 'Published', 'Archived'])->default('Draft');
 
             # others
             $table->enum('status_data', ['Active', 'Not Active',])->default('Active');

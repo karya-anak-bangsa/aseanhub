@@ -19,13 +19,34 @@
             <tr>
                 <th class="text-center">No</th>
                 <th class="text-left">Category Name</th>
+                <th class="text-center">Status Data</th>
+                <th class="text-center">Action</th>
             </tr>
         </x-slot>
         <x-slot:tbody>
             @foreach ($newsCategories as $item)
                 <tr>
-                    <td class="text-center" width="15%">{{ $loop->iteration }}</td>
-                    <td class="text-left" width="85%">{{ $item->category_name_en ?? '-' }}</td>
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td class="text-left">{{ $item->category_name_en ?? '-' }}</td>
+                    <td class="text-center">
+                        @if ($item->status_data === 'Active')
+                            <span class="badge badge-success badge-custom">
+                                Active
+                            </span>
+                        @else
+                            <span class="badge badge-danger badge-custom">
+                                Not Active
+                            </span>
+                        @endif
+                    </td>
+                    <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa-solid fa-display"></i>
+                        </a>
+                        <a href="#" class="btn btn-sm btn-warning">
+                            <i class="fa-solid fa-edit"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </x-slot>
