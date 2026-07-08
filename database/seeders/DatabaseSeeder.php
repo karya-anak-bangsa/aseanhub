@@ -12,21 +12,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            # Hak Akses
+            # Company Profile ASEAN HUB
+            NewsCategorySeeder::class,
+            NewsSeeder::class,
+
+            # Showcase ASEAN HUB
+            PhotoGallerySeeder::class,
+
+            # ASEAN Hub Competition
+            AboutAseanHubSeeder::class,
             AdminSeeder::class,
             JudgesSeeder::class,
             ParticipantsSeeder::class,
             VotersSeeder::class,
-
-            # Frontend
-            AboutAseanHubSeeder::class,
             OpeningSpeechesSeeder::class,
             AboutCompetitionSeeder::class,
             TimelineSeeder::class,
             SiteAreaSeeder::class,
-            PhotoGallerySeeder::class,
-            NewsCategorySeeder::class,
-            NewsSeeder::class,
         ]);
     }
 }

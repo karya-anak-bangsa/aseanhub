@@ -1,3 +1,8 @@
+@php
+    use App\Support\Formatter\Formatter;
+    use App\Support\Formatter\Formatter\LocaleFormatter;
+@endphp
+
 @extends('layouts.backend')
 
 {{-- push styles --}}
@@ -35,12 +40,32 @@
             @foreach ($news as $item)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}</td>
-                    <td class="text-left"></td>
-                    <td class="text-left"></td>
-                    <td class="text-right">{{ NumberFormatter::number($item->views) }}</td>
-                    <td class="text-right"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
+
+                    <td class="text-left">
+                        {!! Formatter::locale($item->title_en, $item->title_id) !!}
+                    </td>
+
+                    <td class="text-left">
+                        {!! Formatter::locale($item->newsCategory->category_name_en ?? '-', $item->newsCategory->category_name_id ?? '-') !!}
+                    </td>
+                    <td class="text-right">
+                        {{ Formatter::number($item->views) }}
+                    </td>
+                    <td class="text-right">
+                        {{ Formatter::date($item->published_date) }}
+                        <br>
+                        <small>{{ Formatter::time($item->published_date) }}</small>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-{{ Formatter::badge($item->published_status) }} badge-custom">
+                            {{ $item->published_status }}
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-{{ Formatter::badge($item->status_data) }} badge-custom">
+                            {{ $item->status_data }}
+                        </span>
+                    </td>
                     <td class="text-center">
                         <a href="#" class="btn btn-sm btn-info">
                             <i class="fa-solid fa-display"></i>

@@ -47,7 +47,7 @@ class News extends Model
         'published_date',
         'published_status',
         'views',
-        'status_data'
+        'status_data',
     ];
 
     # ...
