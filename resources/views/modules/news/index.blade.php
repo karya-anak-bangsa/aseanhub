@@ -33,10 +33,18 @@
         <x-slot name="tbody">
             @foreach ($news as $item)
                 <tr>
-                    <td class="text-center">{{ $loop->iteration }}</td>
-                    <td class="text-left"></td>
-                    <td class="text-left"></td>
-                    <td class="text-right"></td>
+                    <td class="text-center">
+                        {{ $loop->iteration }}
+                    </td>
+                    <td class="text-left">
+                        {!! $item->bilingual('title_en', 'title_id') !!}
+                    </td>
+                    <td class="text-left">
+                        {!! $item->newsCategory->bilingual('category_name_en', 'category_name_id') !!}
+                    </td>
+                    <td class="text-right">
+                        {{ $item->formatNumber('views') }}
+                    </td>
                     <td class="text-right"></td>
                     <td class="text-center"></td>
                     <td class="text-center">

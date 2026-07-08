@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-// use App\Models\Concerns\Formattable;
+use App\Models\Concerns\Formattable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class News extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Formattable;
 
     protected $table        = 'tb_news';
     protected $primaryKey   = 'id_news';
@@ -59,18 +59,8 @@ class News extends Model
         'published_date'    => 'datetime',
     ];
 
-    public const PUBLISHED_BADGE = [
-        'Published'     => 'success',
-        'Draft'         => 'warning',
-        'Archived'      => 'secondary',
-    ];
 
-    public const STATUS_BADGE = [
-        'Active'        => 'success',
-        'Not Active'    => 'danger',
-    ];
-
-
+    # Relasi antara News dengan News Category
     public function newsCategory()
     {
         return $this->belongsTo(NewsCategory::class, 'id_news_category', 'id_news_category');
