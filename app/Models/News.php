@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+// use App\Models\Concerns\Formattable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -57,6 +58,18 @@ class News extends Model
         'deleted_at'        => 'datetime',
         'published_date'    => 'datetime',
     ];
+
+    public const PUBLISHED_BADGE = [
+        'Published'     => 'success',
+        'Draft'         => 'warning',
+        'Archived'      => 'secondary',
+    ];
+
+    public const STATUS_BADGE = [
+        'Active'        => 'success',
+        'Not Active'    => 'danger',
+    ];
+
 
     public function newsCategory()
     {
