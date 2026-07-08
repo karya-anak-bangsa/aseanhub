@@ -37,7 +37,7 @@
                     <td class="text-center">{{ $loop->iteration }}</td>
                     <td class="text-left"></td>
                     <td class="text-left"></td>
-                    <td class="text-right"></td>
+                    <td class="text-right">{{ NumberFormatter::number($item->views) }}</td>
                     <td class="text-right"></td>
                     <td class="text-center"></td>
                     <td class="text-center"></td>

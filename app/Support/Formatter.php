@@ -4,20 +4,11 @@ namespace App\Support;
 
 class Formatter
 {
+    /**
+     * Create a new class instance.
+     */
     public function __construct()
     {
         //
     }
-
-    // Formatter::number()
-    // Formatter::date()
-    // Formatter::time()
-    // Formatter::datetime()
-    // Formatter::badge()
-    // Formatter::status()
-    // Formatter::locale()
-    // Formatter::views()
-    // Formatter::fileSize()
-    // Formatter::truncate()
-
 }
