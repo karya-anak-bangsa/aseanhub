@@ -13,9 +13,6 @@ class Formatter
 
     public static function dateTime(?string $datetime): string
     {
-        // $date = $datetime ? Carbon::parse($datetime)->format('d M Y') : '-';
-        // $time = $datetime ? Carbon::parse($datetime)->format('H:i') : '-';
-
         $carbon = Carbon::parse($datetime);
         $date   = $carbon->format('d M Y');
         $time   = $carbon->format('H:i');
@@ -29,7 +26,7 @@ class Formatter
         return "<strong>{$en}</strong><br><small>{$id}</small>";
     }
 
-    public static function badgeNewsPublished(?string $status): string
+    public static function badgePublished(?string $status): string
     {
         return match ($status) {
             'Published' => 'success',

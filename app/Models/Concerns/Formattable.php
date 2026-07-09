@@ -21,9 +21,9 @@ trait Formattable
         return Formatter::bilingual($this->{$en}, $this->{$id});
     }
 
-    public function formatBadgeNewsPublished(string $value): string
+    public function formatBadgePublished(string $value): string
     {
-        return Formatter::badgeNewsPublished($this->{$value});
+        return Formatter::badgePublished($this->{$value});
     }
 
     public function formatBadgeStatus(string $value): string

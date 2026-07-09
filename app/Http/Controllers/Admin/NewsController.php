@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\News;
+use App\Models\NewsCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class NewsController extends Controller
 
     public function create()
     {
-        //
+        $newsCategories = NewsCategory::where('status_data', 'Active')->orderBy('category_name_en')->get();
+        return view('modules.news.create', compact('newsCategories'));
     }
 
     public function store(Request $request)

@@ -15,7 +15,7 @@
 
     <x-modules.index-table>
         <x-slot name="header">
-            <a href="#" class="btn btn-sm btn-success">
+            <a href="{{ route('admin.news.create') }}" class="btn btn-success">
                 <i class="fa-solid fa-circle-plus mr-2"></i><span>Add Data</span>
             </a>
         </x-slot>
@@ -49,7 +49,7 @@
                         {!! $item->formatDateTime('published_date') !!}
                     </td>
                     <td class="text-center">
-                        <span class="badge badge-{{ $item->formatBadgeNewsPublished('published_status') }} badge-custom">
+                        <span class="badge badge-{{ $item->formatBadgePublished('published_status') }} badge-custom">
                             {{ $item->published_status }}
                         </span>
                     </td>

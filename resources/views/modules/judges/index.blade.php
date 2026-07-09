@@ -45,7 +45,9 @@
 
     <x-modules.index-table>
         <x-slot:header>
-            <a href="{{ route('admin.judges.create') }}" class="btn btn-success">Add Data</a>
+            <a href="{{ route('admin.judges.create') }}" class="btn btn-success">
+                <i class="fa-solid fa-circle-plus mr-2"></i><span>Add Data</span>
+            </a>
         </x-slot>
         <x-slot:thead>
             <tr>
