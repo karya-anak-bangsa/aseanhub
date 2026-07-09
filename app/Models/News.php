@@ -59,7 +59,6 @@ class News extends Model
         'published_date'    => 'datetime',
     ];
 
-
     # Relasi antara News dengan News Category
     public function newsCategory()
     {

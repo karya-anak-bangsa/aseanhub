@@ -17,18 +17,18 @@
         <x-slot:header></x-slot>
         <x-slot:thead>
             <tr>
-                <th class="text-center">No</th>
-                <th class="text-left">Category Name</th>
-                <th class="text-center">Status Data</th>
-                <th class="text-center">Action</th>
+                <th width="10%" class="text-center">No</th>
+                <th width="90%" class="text-left">Category Name</th>
+                {{-- <th class="text-center">Status Data</th> --}}
+                {{-- <th class="text-center">Action</th> --}}
             </tr>
         </x-slot>
         <x-slot:tbody>
             @foreach ($newsCategories as $item)
                 <tr>
-                    <td class="text-center">{{ $loop->iteration }}</td>
-                    <td class="text-left">{{ $item->category_name_en ?? '-' }}</td>
-                    <td class="text-center">
+                    <td width="10%" class="text-center">{{ $loop->iteration }}</td>
+                    <td width="90%" class="text-left">{{ $item->category_name_en ?? '-' }}</td>
+                    {{-- <td class="text-center">
                         @if ($item->status_data === 'Active')
                             <span class="badge badge-success badge-custom">
                                 Active
@@ -38,15 +38,15 @@
                                 Not Active
                             </span>
                         @endif
-                    </td>
-                    <td class="text-center">
+                    </td> --}}
+                    {{-- <td class="text-center">
                         <a href="#" class="btn btn-sm btn-info">
                             <i class="fa-solid fa-display"></i>
                         </a>
                         <a href="#" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
                         </a>
-                    </td>
+                    </td> --}}
                 </tr>
             @endforeach
         </x-slot>

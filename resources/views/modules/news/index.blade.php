@@ -25,8 +25,8 @@
                 <th class="text-left">Title</th>
                 <th class="text-left">Category</th>
                 <th class="text-right">Views</th>
-                <th class="text-right">Published At</th>
-                <th class="text-center">Published Status</th>
+                <th class="text-right">Date</th>
+                <th class="text-center">Status</th>
                 <th class="text-center">Action</th>
             </tr>
         </x-slot>
@@ -45,8 +45,14 @@
                     <td class="text-right">
                         {{ $item->formatNumber('views') }}
                     </td>
-                    <td class="text-right"></td>
-                    <td class="text-center"></td>
+                    <td class="text-right">
+                        {!! $item->formatDateTime('published_date') !!}
+                    </td>
+                    <td class="text-center">
+                        <span class="badge badge-{{ $item->formatBadgeNewsPublished('published_status') }} badge-custom">
+                            {{ $item->published_status }}
+                        </span>
+                    </td>
                     <td class="text-center">
                         <a href="#" class="btn btn-sm btn-info"><i class="fa-solid fa-display"></i></a>
                         <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-edit"></i></a>

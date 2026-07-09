@@ -11,8 +11,23 @@ trait Formattable
         return Formatter::number($this->{$value});
     }
 
+    public function formatDateTime(string $value): string
+    {
+        return Formatter::dateTime($this->{$value});
+    }
+
     public function bilingual(string $en, string $id): string
     {
         return Formatter::bilingual($this->{$en}, $this->{$id});
+    }
+
+    public function formatBadgeNewsPublished(string $value): string
+    {
+        return Formatter::badgeNewsPublished($this->{$value});
+    }
+
+    public function formatBadgeStatus(string $value): string
+    {
+        return Formatter::badgeStatus($this->{$value});
     }
 }
