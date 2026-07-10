@@ -7,14 +7,16 @@
         <span><strong>CATEGORIES & PUBLISH</strong></span>
         <hr>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-4">
         <x-modules.form-input-text
             label="Author's Name"
             name="author_name"
-            :value="$data->author_name ?? null"
+            :value="$news->author_name ?? null"
             :required=true />
-    </div>
 
+    </div>
+    <div class="col-sm-4">
+    </div>
 </div>
 
 {{-- <div class="row">
@@ -24,7 +26,6 @@
             name="title_en"
             :value="$data->title_en ?? null"
             :required=true />
-
         <x-modules.form-input-text
             label="News Headline (ID)"
             name="title_id"

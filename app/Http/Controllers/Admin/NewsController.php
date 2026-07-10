@@ -34,15 +34,7 @@ class NewsController extends Controller
     public function edit(string $id)
     {
         $news = News::findOrFail($id);
-
-        $newsCategories = NewsCategory::where('status_data', 'Active')
-            ->orderBy('category_name_en')
-            ->get();
-
-        return view('modules.news.edit', compact(
-            'news',
-            'newsCategories'
-        ));
+        return view('modules.news.edit', compact('news'));
     }
 
     public function update(Request $request, string $id)

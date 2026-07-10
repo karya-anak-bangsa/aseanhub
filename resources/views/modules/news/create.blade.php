@@ -1,6 +1,5 @@
 @extends('layouts.backend')
 
-{{-- content --}}
 @section('nav-news', 'active')
 @section('content')
 

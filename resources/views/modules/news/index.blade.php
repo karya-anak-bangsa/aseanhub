@@ -27,7 +27,7 @@
                 <th class="text-left">Category</th>
                 <th class="text-right">Views</th>
                 <th class="text-right">Date</th>
-                <th class="text-center">Status</th>
+                <th class="text-center text-nowrap">Action</th>
             </tr>
         </x-slot>
         <x-slot name="tbody">
@@ -53,10 +53,13 @@
                             {{ $item->published_status }}
                         </span>
                     </td>
-                    <td class="text-center">
-                        <a href="#" class="btn btn-sm btn-info"><i class="fa-solid fa-display"></i></a>
-                        <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-edit"></i></a>
-                        <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    <td class="text-center text-nowrap">
+
+                        {{-- Edit --}}
+                        <a href="{{ route('admin.news.edit', $item->id_news) }}" class="btn btn-sm btn-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+
                     </td>
                 </tr>
             @endforeach
