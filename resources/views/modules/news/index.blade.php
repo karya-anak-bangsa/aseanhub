@@ -22,12 +22,12 @@
         <x-slot name="thead">
             <tr>
                 <th class="text-center">No</th>
+                <th class="text-center">Action</th>
                 <th class="text-left">Title</th>
                 <th class="text-left">Category</th>
                 <th class="text-right">Views</th>
                 <th class="text-right">Date</th>
                 <th class="text-center">Status</th>
-                <th class="text-center">Action</th>
             </tr>
         </x-slot>
         <x-slot name="tbody">

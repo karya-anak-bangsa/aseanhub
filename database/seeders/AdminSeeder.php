@@ -17,8 +17,8 @@ class AdminSeeder extends Seeder
             'password' => Hash::make('12341234'),
         ]);
         Admin::create([
-            'admin_name' => 'Admin Asean HUB',
-            'email' => 'admin.aseanhub@mail.com',
+            'admin_name' => 'Administrator Asean HUB',
+            'email' => 'example.admin@mail.com',
             'password' => Hash::make('2026AseanHub2026'),
         ]);
     }

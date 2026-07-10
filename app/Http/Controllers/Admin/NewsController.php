@@ -22,8 +22,7 @@ class NewsController extends Controller
 
     public function create()
     {
-        $newsCategories = NewsCategory::where('status_data', 'Active')->orderBy('category_name_en')->get();
-        return view('modules.news.create', compact('newsCategories'));
+        return view('modules.news.create');
     }
 
     public function store(Request $request)
@@ -31,9 +30,19 @@ class NewsController extends Controller
         //
     }
 
+
     public function edit(string $id)
     {
-        //
+        $news = News::findOrFail($id);
+
+        $newsCategories = NewsCategory::where('status_data', 'Active')
+            ->orderBy('category_name_en')
+            ->get();
+
+        return view('modules.news.edit', compact(
+            'news',
+            'newsCategories'
+        ));
     }
 
     public function update(Request $request, string $id)

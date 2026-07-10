@@ -1,8 +1,6 @@
 <div class="form-group">
 
-    <label for="{{ $name }}" class="{{ $required ? 'required' : '' }}">
-        {{ $label }}
-    </label>
+    <label for="{{ $name }}" class="{{ $required ? 'required' : '' }}"> {{ $label }} </label>
 
     <input type="text" class="form-control border-dark"
         name="{{ $name }}" id="{{ $name }}"
