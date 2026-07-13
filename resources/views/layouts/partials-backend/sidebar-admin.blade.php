@@ -11,14 +11,14 @@
     <li class="nav-header mt-2">COMPANY PROFILE ASEAN HUB</li>
 
     <li class="nav-item">
-        <a href="{{ route('admin.news-category.index') }}" class="nav-link @yield('nav-news-category')">
+        <a href="{{-- route('admin.news-category.index') --}}" class="nav-link @yield('nav-news-category')">
             <i class="nav-icon fas fa-newspaper"></i>
             <p>Category</p>
         </a>
     </li>
 
     <li class="nav-item">
-        <a href="{{ route('admin.news.index') }}" class="nav-link @yield('nav-news')">
+        <a href="{{-- route('admin.news.index') --}}" class="nav-link @yield('nav-news')">
             <i class="nav-icon fa-solid fa-file-circle-plus"></i>
             <p>News</p>
         </a>

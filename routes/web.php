@@ -11,8 +11,8 @@ use App\Http\Controllers\Auth\VerifyVotersEmailController;
 use App\Http\Controllers\Pages\LandingPageController;
 
 # halaman backend - company profile aseanhub
-use App\Http\Controllers\Admin\NewsCategoryController as Adm_NewsCategory;
-use App\Http\Controllers\Admin\NewsController as Adm_News;
+// use App\Http\Controllers\Admin\NewsCategoryController as Adm_NewsCategory;
+// use App\Http\Controllers\Admin\NewsController as Adm_News;
 
 # halaman Backend Landing Pages
 use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
@@ -83,8 +83,8 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         Route::get('/dashboard', [DashboardController::class, 'showAdmin'])->name('dashboard');
 
         # halaman backend - company profile aseanhub
-        Route::resource('news-category', Adm_NewsCategory::class);
-        Route::resource('news', Adm_News::class);
+        // Route::resource('news-category', Adm_NewsCategory::class);
+        // Route::resource('news', Adm_News::class);
 
         # Bagian 1 - Backend Admin
         Route::resource('judges', Adm_JudgesController::class);

@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             # Company Profile ASEAN HUB
-            NewsCategorySeeder::class,
-            NewsSeeder::class,
+            // NewsCategorySeeder::class,
+            // NewsSeeder::class,
 
             # Showcase ASEAN HUB
             PhotoGallerySeeder::class,
